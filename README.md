@@ -1,4 +1,4 @@
-# sca_game
+# SCA GAME
 
 ## Project setup
 ```
