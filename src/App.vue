@@ -55,30 +55,30 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   overflow: hidden;
 }
 
+ol, ul {
+  list-style: none;
+}
+
 h1, h2, h3 {
   font-family: SCAsans, sans-serif;
+  margin-bottom: 50px;
 }
 
 h1 {
   font-size: 4em;
   margin-top: 40px;
-  margin-bottom: 50px;
 }
 
 h2 {
   font-size: 2.35em;
   font-weight: 600;
-  margin-bottom: 50px;
-}
-
-ol, ul {
-  list-style: none;
 }
 
 p {
   font-size: 1.2em;
   font-weight: 100;
   line-height: 1.45em;
+  margin-bottom: 20px;
 }
 
 img {
@@ -102,13 +102,19 @@ a {
   text-decoration: none;
 }
 
-li {
+li, button {
   display: inline-block;
   padding: 17px;
   width: 210px;
   border-radius: 50px;
   text-align: center;
   font-size: 1.5em;
+  border: 0;
+}
+
+button:disabled {
+  background-color: #707070;
+  opacity: 0.7;
 }
 
 .button-primary {

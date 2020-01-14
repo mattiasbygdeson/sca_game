@@ -2,7 +2,7 @@ const headlines = {
   home: "Title",
   instructions: "How to play",
   guide: "What to look for",
-  userForm: "Please fill in this form",
+  userForm: "Please fill the form below",
   score: "Score board",
 };
 
@@ -17,6 +17,12 @@ const paragraphs = {
   guide2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis, eros eget porta bibendum.",
   guide3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis, eros eget porta bibendum.",
   guide4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis, eros eget porta bibendum.",
+
+  userFormName: "Name",
+  userFormCompany: "Company (optional)",
+  userFormPhone: "Phone number",
+  userFormNote: "The winner will be contacted with a text message at the end of the day",
+  userFormAgreement: "I agree that SCA stores this data for analyzing and marketing purposes",
 }
 
 export { headlines, paragraphs };

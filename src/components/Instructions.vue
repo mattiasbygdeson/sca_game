@@ -17,7 +17,7 @@
       </div>
 
       <div class="column">
-        <!-- image -->
+        <img src="https://via.placeholder.com/446x297" />
       </div>      
     </div>
   </div>
@@ -33,12 +33,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper {
-  border: 1px solid pink;
-}
-
-.column {
-  border: 1px solid cyan;
+  display: grid;
+  grid-template-columns: 66% auto;
 }
 </style>

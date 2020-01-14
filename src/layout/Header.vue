@@ -20,7 +20,8 @@ export default {
 <style lang="scss" scoped>
 header {
   padding: 1%;
-  border-bottom: 1px solid gray;
+  // border-bottom: 1px solid gray;
+  // background-color: #fff;
 }
 
 .menu-language {
@@ -31,7 +32,7 @@ header {
   border: 0;
   height: 50px;
   width: 50px;
-  margin-left: 10px;
+  margin-left: 20px;
   border-radius: 50px;
   background-size: 100%;
 

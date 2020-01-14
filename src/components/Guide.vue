@@ -8,6 +8,25 @@
         <router-link to="/userform"><li class="button-primary">Next</li></router-link>
       </ul>
     </nav>
+
+    <p>{{this.paragraphs.guide1}}</p>
+
+    <div class="wrapper">
+      <div class="column">
+        <img src="https://via.placeholder.com/358x233" />
+        <p>{{this.paragraphs.guide2}}</p>
+      </div>
+
+      <div class="column">
+        <img src="https://via.placeholder.com/358x233" />
+        <p>{{this.paragraphs.guide3}}</p>
+      </div>
+
+      <div class="column">
+        <img src="https://via.placeholder.com/358x233" />
+        <p>{{this.paragraphs.guide4}}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -15,11 +34,16 @@
 export default {
   name: 'Guide',
   props: {
-    headlines: Object
+    headlines: Object,
+    paragraphs: Object
   }
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.wrapper {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-column-gap: 5%;
+}
 </style>
