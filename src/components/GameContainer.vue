@@ -1,7 +1,11 @@
 <template>
-  <div class="board-container">
-    <!-- <h2>The game</h2> -->
-    <Woodboard v-for="woodboard in woodboards" :key="woodboard.id" v-bind:woodboard="woodboard" />
+  <div>
+    <div class="board-container">
+      <!-- <h2>The game</h2> -->
+      <Woodboard v-for="woodboard in woodboards" :key="woodboard.id" v-bind:woodboard="woodboard" />  
+    </div>
+
+    <p class="bottom-right">Score: {{this.score}}</p>
   </div>
 </template>
 
@@ -15,35 +19,36 @@ export default {
   },
   data() {
     return {
+      score: 0,
       woodboards: [
         {
           id: "001",
-          uri: "something.png",
+          uri: "testboard-good.png",
           defective: false,
         },
         {
           id: "002",
-          uri: "something.png",
+          uri: "testboard-bad.png",
           defective: true,
         },
         {
           id: "003",
-          uri: "something.png",
+          uri: "testboard-bad.png",
           defective: true,
         },
         {
           id: "004",
-          uri: "something.png",
+          uri: "testboard-good.png",
           defective: false,
         },
         {
           id: "005",
-          uri: "something.png",
+          uri: "testboard-good.png",
           defective: false,
         },
         {
           id: "006",
-          uri: "something.png",
+          uri: "testboard-bad.png",
           defective: true,
         },
       ]
@@ -71,10 +76,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.board-container {
-  // border: 1px solid blue;
-  // width: 2000%;
-  // position: relative;
-  // right: 550px;
+@keyframes move {
+  from {right: 900px}
+  to {right: -1150px}
 }
+
+.board-container {
+  border: 1px solid blue;
+  width: 1000%;
+  // position: fixed;
+  // right: 0;
+
+  // animation-name: move;
+  // animation-duration: 50s;
+}
+
+
 </style>

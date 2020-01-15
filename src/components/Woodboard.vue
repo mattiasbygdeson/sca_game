@@ -1,7 +1,7 @@
 <template>
   <div class="woodboard" :class="{removed : isRemoved}" @click="removeBoard">
     <p>{{this.woodboard.id}}</p>
-    <p>Defective: {{this.woodboard.defective}}</p>
+    <img :src="require(`@/assets/woodboards/${this.woodboard.uri}`)" width="250">
   </div>
 </template>
 
@@ -35,13 +35,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes move {
+  from { right: 3000px }
+  to { right: -2000px }
+}
+
 .woodboard {
-  // height: 600px;
-  // width: 550px;
   border: 1px solid pink;
   display: inline-block;
-  margin: 20px;
+  text-align: center;
   font-size: 0.75em;
+
+  position: relative;
+  width: 500px;
+  right: 3000px;
+  
+  animation-name: move;
+  animation-duration: 40s;
 
   &:hover {
     cursor: pointer;

@@ -130,7 +130,7 @@ button:disabled {
   color: #204440;
 }
 
-nav.bottom-right {
+.bottom-right {
   position: fixed;
   bottom: 7%;
   right: 7%;
