@@ -41,16 +41,10 @@ export default {
   display: inline-block;
   text-align: center;
   font-size: 0.75em;
-  width: 150px;
-  height: 80vh;
-  border: 1px solid red;
-
-  animation-duration: 60s;
-  animation-timing-function: linear;
+  width: 200px;
 
   &:hover {
     cursor: pointer;
-    // background-color: pink;
   }
 
   img {
