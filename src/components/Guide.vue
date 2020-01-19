@@ -4,8 +4,12 @@
 
     <nav class="bottom-right">
       <ul>
-        <router-link to="/instructions"><li class="button-secondary">Go back</li></router-link>
-        <router-link to="/userform"><li class="button-primary">Next</li></router-link>
+        <router-link to="/instructions">
+          <li class="button-secondary">{{this.paragraphs.buttonAbort}}</li>
+        </router-link>
+        <router-link to="/userform">
+          <li class="button-primary">{{this.paragraphs.buttonNext}}</li>
+        </router-link>
       </ul>
     </nav>
 

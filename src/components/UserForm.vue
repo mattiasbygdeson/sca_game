@@ -4,8 +4,12 @@
 
     <nav class="bottom-right">
       <ul>
-        <router-link to="/guide"><li class="button-secondary">Go back</li></router-link>
-        <router-link to="/game"><button class="button-primary" :disabled="disabled">Start game</button></router-link>
+        <router-link to="/guide">
+          <li class="button-secondary">{{this.paragraphs.buttonAbort}}</li>
+        </router-link>
+        <router-link to="/game">
+          <button class="button-primary" :disabled="disabled" @click="submitForm">{{this.paragraphs.buttonStartGame}}</button>
+        </router-link>
       </ul>
     </nav>
 
@@ -55,6 +59,15 @@ export default {
       } else {
         this.disabled = true;
       }
+    },
+    submitForm() {
+      const current_player = {
+        name: this.name,
+        company: this.company,
+        phone: this.phone,
+      };
+
+      this.$emit('submit-form', current_player);
     }
   }
 }

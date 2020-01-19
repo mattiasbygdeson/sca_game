@@ -5,8 +5,18 @@
     </router-link>
 
     <nav class="menu-language">
-      <button class="button-language icon-eng" aria-label="Switch to english language" title="English" />
-      <button class="button-language icon-swe" aria-label="Switch to swedish language" title="Swedish" />
+      <button 
+        class="button-language icon-eng" 
+        aria-label="Switch to english language" 
+        title="English" 
+        @click="$emit('change-lang', 'eng')"
+      />
+      <button 
+        class="button-language icon-swe" 
+        aria-label="Switch to swedish language"
+        title="Swedish"
+        @click="$emit('change-lang', 'swe')"
+      />
     </nav>
   </header>
 </template>
@@ -20,8 +30,6 @@ export default {
 <style lang="scss" scoped>
 header {
   padding: 1%;
-  // border-bottom: 1px solid gray;
-  // background-color: #fff;
 }
 
 .menu-language {

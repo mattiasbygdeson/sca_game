@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <Header />
+    <Header v-on:change-lang="getStrings" />
 
     <main>
-      <router-view :headlines="headlines" :paragraphs="paragraphs"></router-view>
+      <router-view 
+        :headlines="headlines" 
+        :paragraphs="paragraphs"
+        :current_player="this.current_player"
+        v-on:submit-form="registerUser"
+      ></router-view>
     </main>
   </div>
 </template>
 
 <script>
 import Header from "./layout/Header";
-import { headlines, paragraphs } from "./strings.js";
+import { headlines_eng, paragraphs_eng } from "./strings.js";
+import { headlines_swe, paragraphs_swe } from "./strings.js";
 
 export default {
   name: 'app',
@@ -19,8 +25,25 @@ export default {
   },
   data() {
     return {
-      headlines: headlines,
-      paragraphs: paragraphs
+      headlines: headlines_eng,
+      paragraphs: paragraphs_eng,
+      current_player: {},
+    }
+  },
+  methods: {
+    registerUser(current_player) {
+      this.current_player = current_player;
+    },
+    getStrings(lang) {
+      if(lang == "eng"){
+        this.headlines = headlines_eng;
+        this.paragraphs = paragraphs_eng;
+      }
+
+      if(lang == "swe"){
+        this.headlines = headlines_swe;
+        this.paragraphs = paragraphs_swe;
+      }
     }
   }
 }
@@ -88,7 +111,7 @@ img {
 
 #app {
   height: 100vh;
-  // background-image: url("./assets/images/background.jpg");
+  background-image: url("./assets/images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

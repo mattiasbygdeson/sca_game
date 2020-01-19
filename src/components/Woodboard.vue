@@ -1,7 +1,6 @@
 <template>
   <div class="woodboard" :class="{removed : isRemoved}" @click="removeBoard">
-    <p>{{this.woodboard.id}}</p>
-    <img :src="require(`@/assets/woodboards/${this.woodboard.uri}`)" width="250">
+    <img :src="require(`@/assets/woodboards/${this.woodboard.uri}`)" />
   </div>
 </template>
 
@@ -22,45 +21,53 @@ export default {
         this.isRemoved = true;
 
         if(this.woodboard.defective) {
-          //eslint-disable-next-line no-console
-          console.log("You get one point!");
+          this.$emit('add-point');
         } else {
-          //eslint-disable-next-line no-console
-          console.log("You lose one point");
+          this.$emit('remove-point');
         }
       }
-    }
+    },
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @keyframes move {
-  from { right: 3000px }
-  to { right: -2000px }
+  from {  right: 300 * 20px }
+  to { right: -300 * 20px }
 }
 
 .woodboard {
-  border: 1px solid pink;
   display: inline-block;
   text-align: center;
   font-size: 0.75em;
+  width: 150px;
+  height: 80vh;
+  border: 1px solid red;
 
-  position: relative;
-  width: 500px;
-  right: 3000px;
-  
-  animation-name: move;
-  animation-duration: 40s;
+  animation-duration: 60s;
+  animation-timing-function: linear;
 
   &:hover {
     cursor: pointer;
-    background-color: pink;
+    // background-color: pink;
+  }
+
+  img {
+    height: 80vh;
   }
 }
 
+@keyframes slideout {
+  from { transform: translateY(0) }
+  to { transform: translateY(100vh) }
+}
+
 .removed {
-  background-color: pink;
+  animation-name: slideout;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 
   &:hover {
     cursor: initial;

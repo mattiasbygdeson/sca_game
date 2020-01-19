@@ -4,8 +4,12 @@
 
     <nav class="bottom-right">
       <ul>
-        <router-link to="/"><li class="button-secondary">Go back</li></router-link>
-        <router-link to="/guide"><li class="button-primary">Next</li></router-link>
+        <router-link to="/">
+          <li class="button-secondary">{{this.paragraphs.buttonAbort}}</li>
+        </router-link>
+        <router-link to="/guide">
+          <li class="button-primary">{{this.paragraphs.buttonNext}}</li>
+        </router-link>
       </ul>
     </nav>
 
@@ -36,6 +40,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   display: grid;
-  grid-template-columns: 66% auto;
+  grid-template-columns: 55% auto;
+  grid-gap: 20px;
 }
 </style>

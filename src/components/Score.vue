@@ -4,7 +4,7 @@
 
     <nav class="bottom-right">
       <ul>
-        <router-link to="/"><li class="button-secondary">Go back</li></router-link>
+        <router-link to="/"><li class="button-secondary">{{this.paragraphs.buttonAbort}}</li></router-link>
       </ul>
     </nav>
 
@@ -15,52 +15,10 @@
         <th>Score</th>
       </tr>
     
-      <tr>
-        <td>John Doe</td>
-        <td>Cybercom</td>
-        <td>20 / 20</td>
-      </tr>
-
-      <tr>
-        <td>John Doe</td>
-        <td>Cybercom</td>
-        <td>17 / 20</td>
-      </tr>
-
-      <tr>
-        <td>John Doe</td>
-        <td>Cybercom</td>
-        <td>15 / 20</td>
-      </tr>
-
-      <tr>
-        <td>John Doe</td>
-        <td>Cybercom</td>
-        <td>12 / 20</td>
-      </tr>
-
-      <tr>
-        <td>John Doe</td>
-        <td>Cybercom</td>
-        <td>9 / 20</td>
-      </tr>
-
-            <tr>
-        <td>John Doe</td>
-        <td>Cybercom</td>
-        <td>7 / 20</td>
-      </tr>
-
-      <tr>
-        <td>John Doe</td>
-        <td>Cybercom</td>
-        <td>4 / 20</td>
-      </tr>
-
-      <tr>
-        <td>John Doe</td>
-        <td>Cybercom</td>
-        <td>3 / 20</td>
+      <tr v-for="score in scoreboard" :key="score.id">
+        <td>{{score.name}}</td>
+        <td>{{score.company}}</td>
+        <td>{{score.score}}</td>
       </tr>
     </table>
   </div>
@@ -69,8 +27,38 @@
 <script>
 export default {
   name: 'Score',
+  data() {
+    return {
+      scoreboard: [],
+    }
+  },
   props: {
-    headlines: Object
+    headlines: Object,
+    paragraphs: Object,
+  },
+  created() {
+    this.getScore();
+  },
+  methods: {
+    getScore() {
+      var scoreboard = JSON.parse(localStorage.getItem("sca_scoreboard"));
+      scoreboard = scoreboard.sort(this.compare);
+
+      this.scoreboard = scoreboard.slice(0,8);
+    },
+    compare(a, b) {
+      const scoreA = a.score;
+      const scoreB = b.score;
+
+      let comparison = 0;
+
+      if (scoreA > scoreB) {
+        comparison = 1;
+      } else if (scoreA < scoreB) {
+        comparison = -1;
+      }
+      return comparison * -1;
+    }
   }
 }
 </script>

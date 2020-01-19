@@ -6,8 +6,12 @@
 
     <nav>
       <ul>
-        <router-link to="/instructions"><li class="button-primary">Continue</li></router-link>
-        <router-link to="/score"><li class="button-secondary">Score board</li></router-link>
+        <router-link to="/instructions">
+          <li class="button-primary">{{this.paragraphs.buttonContinue}}</li>
+        </router-link>
+        <router-link to="/score">
+          <li class="button-secondary">{{this.paragraphs.buttonScore}}</li>
+        </router-link>
       </ul>
     </nav>
   </div>
