@@ -25,6 +25,9 @@
 </template>
 
 <script>
+// import axios from "axios";
+import { getScoreList } from "../api.js";
+
 export default {
   name: 'Score',
   data() {
@@ -37,14 +40,15 @@ export default {
     paragraphs: Object,
   },
   created() {
-    this.getScore();
+    this.requestScoreList();
   },
   methods: {
-    getScore() {
-      var scoreboard = JSON.parse(localStorage.getItem("sca_scoreboard"));
-      scoreboard = scoreboard.sort(this.compare);
+    async requestScoreList() {
+      let res = await getScoreList();
+      res = res.sort(this.compare);
+      res = res.slice(0,8);
 
-      this.scoreboard = scoreboard.slice(0,8);
+      this.scoreboard = res;
     },
     compare(a, b) {
       const scoreA = a.score;
