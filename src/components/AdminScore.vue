@@ -12,7 +12,7 @@
       </form>
     </div>
 
-    <div v-if="loggedin">
+    <div v-if="loggedin" class="score-list">
       <h2>Score board (admin)</h2>
 
       <table>
@@ -21,15 +21,17 @@
           <th>Company</th>
           <th>Phone</th>
           <th>Score</th>
-          <th></th>
+          <!-- <th></th> -->
         </tr>
       
         <tr v-for="user in scoreboard" :key="user._id">
           <td>{{user.name}}</td>
           <td>{{user.company}}</td>
           <td>{{user.phone}}</td>
-          <td>{{user.score}}</td>
-          <td><button @click="removeItem(user.phone)" class="button-delete">X</button></td>
+          <td>
+            {{user.score}}
+            <!-- <span><button @click="removeItem(user.phone)" class="button-delete">Ta bort</button></span> -->
+          </td>
         </tr>
       </table>
     </div>
@@ -61,7 +63,11 @@ export default {
       this.scoreboard = res;
     },
     async removeItem(phone) {
-      await removeScore(phone);
+      if (confirm("Are you sure you want to delete this entry?")) {
+        await removeScore(phone);
+      }
+
+      // await removeScore(phone);
       this.requestScoreList();
     },
     compare(a, b) {
@@ -117,7 +123,7 @@ export default {
   }
 
   tr {
-    height: 30px;
+    height: 40px;
   }
 
   tr:nth-child(even) {
@@ -144,17 +150,23 @@ export default {
       width: 20%
     }
   }
-  
+}
+
+.score-list {
+  padding-bottom: 200px;
 }
 
 .button-delete {
   height: 25px;
   width: 25px;
-  font-size: 1em;
   margin: 0;
   padding: 0;
   float: right;
-  background: red;
+  border-radius: 3px;
+  height: 35px;
+  width: 60px;
+  font-size: 0.8em;
+  background: #4e535e;
   color: white;
 }
 </style>

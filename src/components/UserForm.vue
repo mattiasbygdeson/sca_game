@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>{{this.headlines.userForm}}</h2>
+    <span class="sidenote">{{this.paragraphs.userFormNote}}</span>
 
     <nav class="bottom-right">
       <ul>
@@ -22,11 +23,13 @@
 
       <label for="phone">{{this.paragraphs.userFormPhone}}</label>
       <input id="phone" type="number" v-model="phone">
-      <span class="sidenote">{{this.paragraphs.userFormNote}}</span>
 
       <div>
         <input id="privacy-agreement" class="checkbox" type="checkbox" v-model="checkbox">
-        <label for="privacy-agreement" class="sidenote">{{this.paragraphs.userFormAgreement}}</label>
+        <label for="privacy-agreement" class="gdrp-agreement">
+          {{this.paragraphs.userFormAgreement}}
+          <a href="https://www.sca.com/gdpr" target="_blank">({{this.paragraphs.readMore}})</a>
+        </label>
       </div>
     </form>
   </div>
@@ -81,7 +84,7 @@ input[type="text"], input[type="number"] {
   border-radius: 3px;
   border: 1px solid #707070;
   background: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding: 0px 20px;
   font-size: 1.5em;
 }
@@ -102,22 +105,32 @@ input[type="number"] {
   width: 40px;
   height: 40px;
   margin: 0;
-  margin-right: 10px;
+  margin-right: 20px;
   margin-top: 30px;
 }
 
 label {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 1.3em;
 }
 
 .sidenote {
   font-size: 1em;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .disabled {
   background-color: #707070;
   opacity: 0.7;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.gdrp-agreement {
+  font-size: 1em;
 }
 
 </style>

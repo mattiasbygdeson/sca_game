@@ -17,7 +17,6 @@
       <div class="column">
         <p>{{this.paragraphs.instructions1}}</p>
         <p>{{this.paragraphs.instructions2}}</p>
-        <p>{{this.paragraphs.instructions3}}</p>
       </div>
 
       <div class="column">

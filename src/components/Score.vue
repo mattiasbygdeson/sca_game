@@ -10,9 +10,9 @@
 
     <table>
       <tr>
-        <th>Name</th>
-        <th>Company</th>
-        <th>Score</th>
+        <th>{{this.paragraphs.userFormName}}</th>
+        <th>{{this.paragraphs.userFormCompany}}</th>
+        <th>{{this.paragraphs.score}}</th>
       </tr>
     
       <tr v-for="user in scoreboard" :key="user.id">

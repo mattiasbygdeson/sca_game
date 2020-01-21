@@ -97,17 +97,17 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 3.5em;
   margin-top: 40px;
 }
 
 h2 {
-  font-size: 2.35em;
+  font-size: 2.15em;
   font-weight: 600;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 100;
   line-height: 1.45em;
   margin-bottom: 20px;
@@ -130,6 +130,7 @@ main {
 }
 
 a {
+  color: #44986b;
   margin-right: 20px;
   text-decoration: none;
 }

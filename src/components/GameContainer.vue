@@ -13,7 +13,7 @@
     <div v-if="gameover" class="score-container">
       <div class="score">
         <p class="name">{{current_player.name}}</p>
-        <h1>You got {{this.score}} points</h1>
+        <h1>{{this.paragraphs.youGot}} {{this.score}} {{this.paragraphs.score}}</h1>
 
         <div class="summary">
           <div>
