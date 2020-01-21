@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <div class="bottom-bar">
+    <div v-if="!gameover" class="bottom-bar">
       <p class="bottom-right">{{this.timer}}</p>
       <div :key="retry" class="progress-bar"></div>
     </div>
@@ -69,7 +69,7 @@ export default {
     return {
       woodboards: woodboards,
       score: 0,
-      gameover: false,
+      gameover: true,
       timer: 60,
       goodboards: 50,
       defectboards: 10,
@@ -166,7 +166,7 @@ export default {
   width: 200 * 81px;
   left: -200 * 60px;
 
-  background-image: url("../assets/images/beltbg.jpg");
+  background-image: url("../assets/images/beltbg2.jpg");
 
   animation-name: move;
   animation-duration: 60s;
@@ -176,8 +176,11 @@ export default {
 .bottom-bar {
   min-width: 50px;
   min-height: 200px;
-  background: black;
+  // background-image: url("../assets/images/bottombarbg.jpg");
+  // background-size: 100%;
+  background-size: cover;
   border-top: 10px solid #2c3137;
+  background: linear-gradient(139deg, rgba(165,168,169,1) 0%, rgba(125,127,127,1) 100%);
 
   p {
     color: white;
@@ -201,7 +204,7 @@ export default {
 }
 
 .game-wrapper {
-  background: #414850;
+  background-image: url("../assets/images/beltbg2.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -210,8 +213,12 @@ export default {
 
 .score-container {
   position: fixed;
-  top: 90px;
+  top: 0px;
   width: 100%;
+  height: 100vh;
+  background-image: url("../assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .score {
     padding-top: 50px;
@@ -220,6 +227,7 @@ export default {
     width: 650px;
     text-align: center;
     margin: auto;
+    margin-top: 10vh;
     background: white;
     border-radius: 3px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);

@@ -14,6 +14,10 @@
         </router-link>
       </ul>
     </nav>
+
+    <router-link to="/adminscore">
+      <li class="secret"></li>
+    </router-link>
   </div>
 </template>
 
@@ -27,13 +31,27 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 p {
   width: 600px;
 }
 
 nav {
   margin-top: 70px;
+}
+
+.secret {
+  border: 1px solid red;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  width: 100%;
+  opacity: 0;
+
+  &:hover {
+    cursor: initial;
+  }
 }
 
 </style>

@@ -1,24 +1,38 @@
 <template>
   <div class="container">
-    <h2>Score board (admin)</h2>
+    <router-link to="/">
+      <li class="button-secondary bottom-right">Go back</li>
+    </router-link>
 
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Company</th>
-        <th>Phone</th>
-        <th>Score</th>
-        <th></th>
-      </tr>
-    
-      <tr v-for="user in scoreboard" :key="user._id">
-        <td>{{user.name}}</td>
-        <td>{{user.company}}</td>
-        <td>{{user.phone}}</td>
-        <td>{{user.score}}</td>
-        <td><button @click="removeItem(user.phone)" class="button-delete">X</button></td>
-      </tr>
-    </table>
+    <div class="login-form" v-if="!loggedin">
+      <h2>Access restricted</h2>
+      <form v-on:submit.prevent="login">
+        <input type="password" v-model="passInput">
+        <input type="submit" value="Log in">
+      </form>
+    </div>
+
+    <div v-if="loggedin">
+      <h2>Score board (admin)</h2>
+
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Company</th>
+          <th>Phone</th>
+          <th>Score</th>
+          <th></th>
+        </tr>
+      
+        <tr v-for="user in scoreboard" :key="user._id">
+          <td>{{user.name}}</td>
+          <td>{{user.company}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.score}}</td>
+          <td><button @click="removeItem(user.phone)" class="button-delete">X</button></td>
+        </tr>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -31,6 +45,9 @@ export default {
   data() {
     return {
       scoreboard: [],
+      loggedin: false,
+      passInput: "",
+      passStored: "massasca!2020"
     }
   },
   created() {
@@ -59,6 +76,14 @@ export default {
         comparison = -1;
       }
       return comparison * -1;
+    },
+    login() {
+      if(this.passInput == this.passStored) {
+        this.loggedin = true;
+      } else {
+        //eslint-disable-next-line no-console
+        alert("Incorrect password");
+      }
     }
   }
 }
@@ -98,6 +123,28 @@ export default {
   tr:nth-child(even) {
     background: #e6e6e6;
   }
+
+  .login-form {
+    width: 40%;
+    margin: auto;
+    margin-top: 15vh;
+
+    h2 {
+      margin: 0;
+      margin-bottom: 30px;
+    }
+
+    input[type="password"] {
+      height: 40px;
+      width: 80%;
+    }
+
+    input[type="submit"] {
+      height: 40px;
+      width: 20%
+    }
+  }
+  
 }
 
 .button-delete {
