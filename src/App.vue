@@ -82,9 +82,6 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   font-weight: normal;
   font-family: HelveticaNeue, sans-serif;
   color: #204440;
-  // max-height: 100vh;
-  // overflow: hidden;
-  // position: relative;
 }
 
 ol, ul {

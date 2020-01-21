@@ -17,17 +17,17 @@
 
     <div class="wrapper">
       <div class="column">
-        <img src="https://via.placeholder.com/358x233" />
+        <img src="../assets/images/sample1.jpg" />
         <p>{{this.paragraphs.guide2}}</p>
       </div>
 
       <div class="column">
-        <img src="https://via.placeholder.com/358x233" />
+        <img src="../assets/images/sample2.jpg" />
         <p>{{this.paragraphs.guide3}}</p>
       </div>
 
       <div class="column">
-        <img src="https://via.placeholder.com/358x233" />
+        <img src="../assets/images/sample3.jpg" />
         <p>{{this.paragraphs.guide4}}</p>
       </div>
     </div>
