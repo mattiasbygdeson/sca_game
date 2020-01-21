@@ -26,6 +26,31 @@ async function getScoreList() {
   }
 }
 
+async function setScore(name, company, phone, score) {
+  try {
+    const response = await instance.post(url, {
+      name: name,
+      company: company,
+      phone: phone,
+      score: score
+    });
+    return response;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
+  }
+}
+
+async function removeScore(phone) {
+  try {
+    const response = await instance.delete(url + "/" + phone);
+    return response;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
+  }
+}
+
 // async function getModels(id) {
 //   try {
 //     const response = await instance.get(configuratorUrl + "&brand=" + id);
@@ -96,5 +121,5 @@ async function getScoreList() {
 // }
 
 export {
-  getScoreList,
+  getScoreList, setScore, removeScore
 };

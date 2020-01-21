@@ -1,24 +1,22 @@
 <template>
-  <div>
-    <h2>{{this.headlines.score}}</h2>
-
-    <nav class="bottom-right">
-      <ul>
-        <router-link to="/"><li class="button-secondary">{{this.paragraphs.buttonAbort}}</li></router-link>
-      </ul>
-    </nav>
+  <div class="container">
+    <h2>Score board (admin)</h2>
 
     <table>
       <tr>
         <th>Name</th>
         <th>Company</th>
+        <th>Phone</th>
         <th>Score</th>
+        <th></th>
       </tr>
     
-      <tr v-for="user in scoreboard" :key="user.id">
+      <tr v-for="user in scoreboard" :key="user._id">
         <td>{{user.name}}</td>
         <td>{{user.company}}</td>
+        <td>{{user.phone}}</td>
         <td>{{user.score}}</td>
+        <td><button @click="removeItem(user.phone)" class="button-delete">X</button></td>
       </tr>
     </table>
   </div>
@@ -26,17 +24,14 @@
 
 <script>
 import { getScoreList } from "../api.js";
+import { removeScore } from "../api.js";
 
 export default {
-  name: 'Score',
+  name: 'AdminScore',
   data() {
     return {
       scoreboard: [],
     }
-  },
-  props: {
-    headlines: Object,
-    paragraphs: Object,
   },
   created() {
     this.requestScoreList();
@@ -45,9 +40,12 @@ export default {
     async requestScoreList() {
       let res = await getScoreList();
       res = res.sort(this.compare);
-      res = res.slice(0,8);
 
       this.scoreboard = res;
+    },
+    async removeItem(phone) {
+      await removeScore(phone);
+      this.requestScoreList();
     },
     compare(a, b) {
       const scoreA = a.score;
@@ -67,23 +65,49 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-table {
+.container {
+  background: white;
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
-  border-spacing: 0;
+  height: 100vh;
+  overflow-y: scroll;
 
-  th, td {
-    text-align: left;
+  h2 {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
-  td {
-    font-size: 1.15em;
-    padding: 15px 0 5px 0;
+  table {
+    margin: auto;
+    text-align: left;
+    width: 80%;
+  }
+
+  th {
     border-bottom: 1px solid #707070;
   }
 
-  th:nth-of-type(3), td:nth-of-type(3) {
-    width: 7%;
+  tr {
+    height: 30px;
+  }
+
+  tr:nth-child(even) {
+    background: #e6e6e6;
   }
 }
 
+.button-delete {
+  height: 25px;
+  width: 25px;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  float: right;
+  background: red;
+  color: white;
+}
 </style>

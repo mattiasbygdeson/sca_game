@@ -7,6 +7,7 @@ import Instructions from './components/Instructions';
 import Guide from './components/Guide';
 import UserForm from './components/UserForm';
 import GameContainer from './components/GameContainer';
+import AdminScore from './components/AdminScore';
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,7 @@ const router = new VueRouter({
     { path: '/guide', component: Guide },
     { path: '/userform', component: UserForm },
     { path: '/game', component: GameContainer },
+    { path: '/adminscore', component: AdminScore },
   ],
   mode: 'history'
 });

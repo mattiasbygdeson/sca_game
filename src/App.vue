@@ -17,7 +17,6 @@
 import Header from "./layout/Header";
 import { headlines_eng, paragraphs_eng } from "./strings.js";
 import { headlines_swe, paragraphs_swe } from "./strings.js";
-import axios from "axios";
 
 export default {
   name: 'app',
@@ -30,21 +29,6 @@ export default {
       paragraphs: paragraphs_eng,
       current_player: {},
     }
-  },
-  created() {
-    //eslint-disable-next-line no-console
-    console.log("Hello World");
-
-    axios.get("https://sca-score-api.herokuapp.com/api/score")
-    .then(function (response) {
-      //eslint-disable-next-line no-console
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      //eslint-disable-next-line no-console
-      console.log(error);
-    });
-
   },
   methods: {
     registerUser(current_player) {

@@ -54,7 +54,7 @@
 <script>
 import Woodboard from "./Woodboard";
 import { woodboards } from "../woodboards.js";
-import uuid from "uuid";
+import { setScore } from "../api.js";
 
 export default {
   name: 'GameContainer',
@@ -79,7 +79,7 @@ export default {
   created() {
     this.shuffle(this.woodboards);
     this.countdown();
-    setTimeout(this.saveResults, this.timer * 1000);
+    setTimeout(this.endGame, this.timer * 1000);
   },
   methods: {
     shuffle(array) {
@@ -111,35 +111,26 @@ export default {
       this.score -= 16;
       this.goodboards --;
     },
-    saveResults() {
-      var positivePoints = (this.goodboards * 16) + ((10 - this.defectboards) * 20);
-      var negativePoints = ((50 - this.goodboards) * 16) + (this.defectboards * 80);
-
-      this.score = positivePoints - negativePoints;
-
+    async endGame() {
       this.gameover = true;
 
+      // Calculate points
+      var positivePoints = (this.goodboards * 16) + ((10 - this.defectboards) * 20);
+      var negativePoints = ((50 - this.goodboards) * 16) + (this.defectboards * 80);
+      this.score = positivePoints - negativePoints;
+
+      // Set score to zero if result was negative
       if(this.score < 0) {
         this.score = 0;
       }
 
-      const result = {
-        id: uuid.v4(),
-        name: this.current_player.name,
-        company: this.current_player.company,
-        score: this.score,
-      }
-
-      var scoreboard = JSON.parse(localStorage.getItem("sca_scoreboard"));
-
-      if(scoreboard) {
-        scoreboard.push(result);
-        localStorage.setItem("sca_scoreboard", JSON.stringify(scoreboard));
-      } else {
-        var newScoreboard = [];
-        newScoreboard.push(result);
-        localStorage.setItem("sca_scoreboard", JSON.stringify(newScoreboard));
-      }
+      // Save result to database
+      const name = this.current_player.name;
+      const company = this.current_player.company;
+      const phone = this.current_player.phone;
+      const score = this.score;
+      
+      await setScore(name, company, phone, score);
     },
     restart() {
       this.retry++;
@@ -152,7 +143,7 @@ export default {
 
       this.shuffle(this.woodboards);
       this.countdown();
-      setTimeout(this.saveResults, this.timer * 1000);
+      setTimeout(this.endGame, this.timer * 1000);
     }
   }
 }
@@ -198,7 +189,7 @@ export default {
   .progress-bar {
     width: 100%;
     height: 10px;
-    background: #e22339;
+    background: #389c68;
     position: fixed;
     bottom: 0;
 
