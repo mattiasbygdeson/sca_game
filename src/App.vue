@@ -69,17 +69,22 @@ html {
   box-sizing: inherit;
 }
 
+html, body {
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
   font-family: HelveticaNeue, sans-serif;
   color: #204440;
-  // position: fixed;
-  // width: 100%;
-  max-height: 100vh;
-  overflow: hidden;
-  position: relative;
+  // max-height: 100vh;
+  // overflow: hidden;
+  // position: relative;
 }
 
 ol, ul {
