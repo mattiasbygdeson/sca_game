@@ -69,7 +69,7 @@ export default {
     return {
       woodboards: woodboards,
       score: 0,
-      gameover: true,
+      gameover: false,
       timer: 60,
       goodboards: 50,
       defectboards: 10,
