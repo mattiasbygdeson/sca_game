@@ -11,7 +11,12 @@ import AdminScore from './components/AdminScore';
 import VScrollLock from 'v-scroll-lock'
 
 Vue.use(VueRouter);
-Vue.use(VScrollLock)
+Vue.use(VScrollLock);
+
+document.body.addEventListener("touchmove", function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+}, false);
 
 Vue.config.productionTip = false;
 
