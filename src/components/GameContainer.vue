@@ -1,5 +1,5 @@
 <template>
-  <div class="game-wrapper">
+  <div class="game-wrapper" v-scroll-lock="true">
     <div :key="retry" class="boards-container">
       <Woodboard
         v-for="woodboard in woodboards" 

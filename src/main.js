@@ -8,8 +8,10 @@ import Guide from './components/Guide';
 import UserForm from './components/UserForm';
 import GameContainer from './components/GameContainer';
 import AdminScore from './components/AdminScore';
+import VScrollLock from 'v-scroll-lock'
 
 Vue.use(VueRouter);
+Vue.use(VScrollLock)
 
 Vue.config.productionTip = false;
 
