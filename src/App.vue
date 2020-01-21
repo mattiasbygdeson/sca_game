@@ -78,6 +78,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   // position: fixed;
   // width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 ol, ul {

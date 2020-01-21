@@ -13,9 +13,9 @@ import VScrollLock from 'v-scroll-lock'
 Vue.use(VueRouter);
 Vue.use(VScrollLock);
 
-document.body.addEventListener("touchmove", function(event) {
+document.body.addEventListener("touchstart", function(event) {
   event.preventDefault();
-  event.stopPropagation();
+  // event.stopPropagation();
 }, false);
 
 Vue.config.productionTip = false;
