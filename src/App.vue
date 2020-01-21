@@ -77,6 +77,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   color: #204440;
   // position: fixed;
   // width: 100%;
+  max-height: 100vh;
   overflow: hidden;
   position: relative;
 }
