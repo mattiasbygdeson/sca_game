@@ -17,10 +17,15 @@
         <p>{{this.paragraphs.instructions2}}</p>
 
         <div class="point-description">
-          <p><span class="badge positive">+20 p</span> {{this.paragraphs.instructions3}}</p>
-          <p><span class="badge positive">+16 p</span> {{this.paragraphs.instructions4}}</p>
-          <p><span class="badge negative">-16 p</span> {{this.paragraphs.instructions5}}</p>
-          <p><span class="badge negative">-80 p</span> {{this.paragraphs.instructions6}}</p>
+          <div class="column">
+            <p><span class="badge positive">+20 p</span> {{this.paragraphs.instructions3}}</p>
+            <p><span class="badge positive">+16 p</span> {{this.paragraphs.instructions4}}</p>
+          </div>
+          
+          <div class="column">
+            <p><span class="badge negative">-16 p</span> {{this.paragraphs.instructions5}}</p>
+            <p><span class="badge negative">-80 p</span> {{this.paragraphs.instructions6}}</p>
+          </div>
         </div>
       </div>
 
@@ -51,6 +56,8 @@ export default {
 .point-description {
   margin-top: 50px;
   font-size: 0.9em;
+  display: grid;
+  grid-template-columns: 50% 50%;
   // background: rgba(0,0,0,0.1);
   // padding: 20px;
 
