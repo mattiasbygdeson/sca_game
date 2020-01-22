@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   display: grid;
-  grid-template-columns: 50% auto;
+  grid-template-columns: 45% auto;
   grid-gap: 20px;
 }
 
