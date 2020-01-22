@@ -44,12 +44,13 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   display: grid;
-  grid-template-columns: 55% auto;
+  grid-template-columns: 65% auto;
   grid-gap: 20px;
 }
 
 .point-description {
   margin-top: 50px;
+  font-size: 0.9em;
   // background: rgba(0,0,0,0.1);
   // padding: 20px;
 
@@ -59,7 +60,7 @@ export default {
   }
   
   .badge {
-    width: 80px;
+    width: 120px;
     text-align: center;
     display: inline-block;
     border-radius: 3px;
