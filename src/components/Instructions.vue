@@ -15,11 +15,18 @@
       <div class="column">
         <p>{{this.paragraphs.instructions1}}</p>
         <p>{{this.paragraphs.instructions2}}</p>
+
+        <div class="point-description">
+          <p><span class="badge positive">+20 p</span> {{this.paragraphs.instructions3}}</p>
+          <p><span class="badge positive">+16 p</span> {{this.paragraphs.instructions4}}</p>
+          <p><span class="badge negative">-16 p</span> {{this.paragraphs.instructions5}}</p>
+          <p><span class="badge negative">-80 p</span> {{this.paragraphs.instructions6}}</p>
+        </div>
       </div>
 
       <div class="column">
         <img src="https://via.placeholder.com/446x297" />
-      </div>      
+      </div>
     </div>
   </div>
 </template>
@@ -39,5 +46,34 @@ export default {
   display: grid;
   grid-template-columns: 55% auto;
   grid-gap: 20px;
+}
+
+.point-description {
+  margin-top: 50px;
+  // background: rgba(0,0,0,0.1);
+  // padding: 20px;
+
+  p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .badge {
+    width: 80px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 6px 15px;
+    color: white;
+    margin-right: 5px;
+
+    &.positive {
+      background: #00205B;
+    }
+
+    &.negative {
+      background: #873742;
+    }
+  }
 }
 </style>

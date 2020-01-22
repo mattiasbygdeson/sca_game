@@ -149,7 +149,8 @@ button:disabled {
 }
 
 .button-primary {
-  background: #44986B;
+  // background: #44986B;
+  background: linear-gradient(167deg, rgba(68,152,107,1) 0%, rgba(59,129,85,1) 100%);
   color: white;
   
   font-weight: 600;

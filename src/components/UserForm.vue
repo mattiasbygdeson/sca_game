@@ -25,7 +25,7 @@
       <input id="phone" type="number" v-model="phone">
 
       <div>
-        <input id="privacy-agreement" class="checkbox" type="checkbox" v-model="checkbox">
+        <input id="privacy-agreement" type="checkbox" v-model="checkbox">
         <label for="privacy-agreement" class="gdrp-agreement">
           {{this.paragraphs.userFormAgreement}}
           <a href="https://www.sca.com/gdpr" target="_blank">({{this.paragraphs.readMore}})</a>
@@ -99,14 +99,15 @@ input[type="number"] {
   margin-bottom: 0;
 }
 
-.checkbox {
+input[type="checkbox"] {
   position: relative;
   top: 15px;
-  width: 40px;
-  height: 40px;
+  min-width: 40px !important;
+  min-height: 40px !important;
   margin: 0;
   margin-right: 20px;
   margin-top: 30px;
+  background: white;
 }
 
 label {

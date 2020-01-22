@@ -2,6 +2,8 @@
   <div>
     <h2>{{this.headlines.score}}</h2>
 
+
+
     <nav class="bottom-right">
       <router-link to="/">
         <button class="button-secondary">{{this.paragraphs.buttonAbort}}</button>
@@ -21,6 +23,8 @@
         <td>{{user.score}}</td>
       </tr>
     </table>
+
+    <div v-if="loading" class="loading-spinner"></div>
   </div>
 </template>
 
@@ -32,6 +36,7 @@ export default {
   data() {
     return {
       scoreboard: [],
+      loading: true,
     }
   },
   props: {
@@ -44,6 +49,7 @@ export default {
   methods: {
     async requestScoreList() {
       let res = await getScoreList();
+      this.loading = false;
       res = res.sort(this.compare);
       res = res.slice(0,8);
 
@@ -84,6 +90,17 @@ table {
   th:nth-of-type(3), td:nth-of-type(3) {
     width: 7%;
   }
+}
+
+.loading-spinner {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 10vh;
+
+  background-image: url("../assets/images/spinner.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 </style>

@@ -19,7 +19,11 @@ const paragraphs_eng = {
   buttonTryAgain: "Play again",
 
   instructions1: "During 60 seconds our deck of X-Ray 2.0 will pass by on a conveyor belt. You got about 3 seconds per board to determine if its quality is OK for delivery or if it should be removed. There are a total of 60 boards of which 10 are defective. If a board looks fine you let it pass by. However if it doesn't you click on it to have it removed from the line.",
-  instructions2: "There will be a high score list of our top 8 players for the day. Get on the list so everybody can see how skilled you are! ",
+  instructions2: "There will be a high score list of our top 8 players for the day. Get on the list so everybody can see how skilled you are!",
+  instructions3: "for every defective board you remove",
+  instructions4: "for every fine board you let pass through",
+  instructions5: "for every fine board you remove",
+  instructions6: "for every defective board you let pass through",
 
   guide1: "There will be three different types of flaws that will reveal if a board is defective or not.",
   guide2: "Ugly branch spots",
@@ -59,6 +63,10 @@ const paragraphs_swe = {
 
   instructions1: "Under 60 sekunder kommer våra trall X-Ray 2.0 att passera på ett rullband, du har cirka 3 sekunder på dig att bedöma om trallbrädan är OK för godkännande eller om den ska sorteras ur. Det är totalt 60 brädor varav 10 inte är godkända. Om trallen är godkänd låter du den passera. Är den inte godkänd klickar du på den så försvinner den ur ledet.",
   instructions2: "Då du spelat klart hamnar topp 8 för dagen på en lista så alla kan se hur bra du är!",
+  instructions3: "för varje defekt trall du tar bort",
+  instructions4: "för varje fin trall du låter passera",
+  instructions5: "för varje fin trall du råkar ta bort",
+  instructions6: "för varje defekt trall du låter passera",
 
   guide1: "Det finns tre olika brister på brädan som visar på att den är defekt:",
   guide2: "Ful kvist",
