@@ -61,7 +61,7 @@ export default {
 
 .point-description {
   // margin-top: 50px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   display: grid;
   // grid-template-columns: 50% 50%;
   // background: rgba(0,0,0,0.1);
