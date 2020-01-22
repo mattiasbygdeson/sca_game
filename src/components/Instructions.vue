@@ -55,14 +55,16 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   display: grid;
-  grid-template-columns: 45% auto;
-  grid-gap: 20px;
+  grid-template-columns: 42% auto;
+  grid-gap: 40px;
 }
 
 .point-description {
   // margin-top: 50px;
   font-size: 0.8em;
   display: grid;
+  background: rgba(0,0,0,0.2);
+  padding: 8px;
   // grid-template-columns: 50% 50%;
   // background: rgba(0,0,0,0.1);
   // padding: 20px;

@@ -85,14 +85,4 @@ export default {
     right: 25px;
   }
 }
-
-.column:nth-of-type(3) {
-  position: relative;
-  top: 40px;
-}
-
-.column:nth-of-type(2) {
-  position: relative;
-  top: 20px;
-}
 </style>
