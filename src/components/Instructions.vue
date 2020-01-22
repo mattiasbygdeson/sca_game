@@ -3,14 +3,12 @@
     <h2>{{this.headlines.instructions}}</h2>
 
     <nav class="bottom-right">
-      <ul>
-        <router-link to="/">
-          <li class="button-secondary">{{this.paragraphs.buttonAbort}}</li>
-        </router-link>
-        <router-link to="/guide">
-          <li class="button-primary">{{this.paragraphs.buttonNext}}</li>
-        </router-link>
-      </ul>
+      <router-link to="/">
+        <button class="button-secondary">{{this.paragraphs.buttonAbort}}</button>
+      </router-link>
+      <router-link to="/guide">
+        <button class="button-primary">{{this.paragraphs.buttonNext}}</button>
+      </router-link>
     </nav>
 
     <div class="wrapper">

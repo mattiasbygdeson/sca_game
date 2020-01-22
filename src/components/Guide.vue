@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="forest-background">
     <h2>{{this.headlines.guide}}</h2>
 
     <nav class="bottom-right">
       <ul>
         <router-link to="/instructions">
-          <li class="button-secondary">{{this.paragraphs.buttonAbort}}</li>
+          <button class="button-secondary">{{this.paragraphs.buttonAbort}}</button>
         </router-link>
         <router-link to="/userform">
-          <li class="button-primary">{{this.paragraphs.buttonNext}}</li>
+          <button class="button-primary">{{this.paragraphs.buttonNext}}</button>
         </router-link>
       </ul>
     </nav>

@@ -6,7 +6,7 @@
     <nav class="bottom-right">
       <ul>
         <router-link to="/guide">
-          <li class="button-secondary">{{this.paragraphs.buttonAbort}}</li>
+          <button class="button-secondary">{{this.paragraphs.buttonAbort}}</button>
         </router-link>
         <router-link to="/game">
           <button class="button-primary" :disabled="disabled" @click="submitForm">{{this.paragraphs.buttonStartGame}}</button>

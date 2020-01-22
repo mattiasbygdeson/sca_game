@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <router-link to="/">
-      <li class="button-secondary bottom-right">Go back</li>
+      <button class="button-secondary bottom-right">Go back</button>
     </router-link>
 
     <div class="login-form" v-if="!loggedin">

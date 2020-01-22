@@ -3,9 +3,9 @@
     <h2>{{this.headlines.score}}</h2>
 
     <nav class="bottom-right">
-      <ul>
-        <router-link to="/"><li class="button-secondary">{{this.paragraphs.buttonAbort}}</li></router-link>
-      </ul>
+      <router-link to="/">
+        <button class="button-secondary">{{this.paragraphs.buttonAbort}}</button>
+      </router-link>
     </nav>
 
     <table>

@@ -134,8 +134,9 @@ a {
 
 li, button {
   display: inline-block;
-  padding: 17px;
+  padding: 15px;
   width: 210px;
+  height: 60px;
   border-radius: 50px;
   text-align: center;
   font-size: 1.5em;

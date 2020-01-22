@@ -38,7 +38,7 @@
             <button class="button-primary" @click="restart">{{this.paragraphs.buttonTryAgain}}</button>
           </router-link>
           <router-link to="/">
-            <li class="button-secondary">{{this.paragraphs.buttonAbort}}</li>
+            <button class="button-secondary">{{this.paragraphs.buttonAbort}}</button>
           </router-link>
         </nav>
       </div>

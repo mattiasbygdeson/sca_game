@@ -1,5 +1,5 @@
 const headlines_eng = {
-  home: "Title",
+  home: "About SCA",
   instructions: "This is how you play",
   guide: "What to look for",
   userForm: "Please fill the form below before you start",

@@ -10,10 +10,10 @@
     <nav>
       <ul>
         <router-link to="/instructions">
-          <li class="button-primary">{{this.paragraphs.buttonContinue}}</li>
+          <button class="button-primary">{{this.paragraphs.buttonContinue}}</button>
         </router-link>
         <router-link to="/score">
-          <li class="button-secondary">{{this.paragraphs.buttonScore}}</li>
+          <button class="button-secondary">{{this.paragraphs.buttonScore}}</button>
         </router-link>
       </ul>
     </nav>
