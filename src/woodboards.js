@@ -1,52 +1,7 @@
 const woodboards = [
   {
-    id: "01",
-    uri: "defect_board_01.png",
-    defective: true,
-  },
-  {
-    id: "02",
-    uri: "defect_board_02.png",
-    defective: true,
-  },
-  {
-    id: "03",
-    uri: "defect_board_03.png",
-    defective: true,
-  },
-  {
-    id: "04",
-    uri: "defect_board_04.png",
-    defective: true,
-  },
-  {
-    id: "05",
-    uri: "defect_board_05.png",
-    defective: true,
-  },
-  {
-    id: "06",
-    uri: "defect_board_06.png",
-    defective: true,
-  },
-  {
     id: "07",
     uri: "defect_board_07.png",
-    defective: true,
-  },
-  {
-    id: "08",
-    uri: "defect_board_08.png",
-    defective: true,
-  },
-  {
-    id: "09",
-    uri: "defect_board_09.png",
-    defective: true,
-  },
-  {
-    id: "10",
-    uri: "defect_board_10.png",
     defective: true,
   },
   {
@@ -69,6 +24,13 @@ const woodboards = [
     uri: "fine_board_04.png",
     defective: false,
   },
+
+  {
+    id: "10",
+    uri: "defect_board_10.png",
+    defective: true,
+  },
+
   {
     id: "15",
     uri: "fine_board_05.png",
@@ -115,6 +77,11 @@ const woodboards = [
     defective: false,
   },
   {
+    id: "09",
+    uri: "defect_board_09.png",
+    defective: true,
+  },
+  {
     id: "24",
     uri: "fine_board_14.png",
     defective: false,
@@ -158,6 +125,11 @@ const woodboards = [
     id: "32",
     uri: "fine_board_06.png",
     defective: false,
+  },
+  {
+    id: "08",
+    uri: "defect_board_08.png",
+    defective: true,
   },
   {
     id: "33",
@@ -229,6 +201,12 @@ const woodboards = [
     uri: "fine_board_04.png",
     defective: false,
   },
+
+  {
+    id: "06",
+    uri: "defect_board_06.png",
+    defective: true,
+  },
   {
     id: "47",
     uri: "fine_board_05.png",
@@ -250,6 +228,11 @@ const woodboards = [
     defective: false,
   },
   {
+    id: "05",
+    uri: "defect_board_05.png",
+    defective: true,
+  },
+  {
     id: "51",
     uri: "fine_board_09.png",
     defective: false,
@@ -263,6 +246,16 @@ const woodboards = [
     id: "53",
     uri: "fine_board_11.png",
     defective: false,
+  },
+  {
+    id: "03",
+    uri: "defect_board_03.png",
+    defective: true,
+  },
+  {
+    id: "04",
+    uri: "defect_board_04.png",
+    defective: true,
   },
   {
     id: "54",
@@ -290,6 +283,11 @@ const woodboards = [
     defective: false,
   },
   {
+    id: "02",
+    uri: "defect_board_02.png", 
+    defective: true,
+  },
+  {
     id: "59",
     uri: "fine_board_01.png",
     defective: false,
@@ -298,7 +296,12 @@ const woodboards = [
     id: "60",
     uri: "fine_board_02.png",
     defective: false,
-  }
+  },
+  {
+    id: "01",
+    uri: "defect_board_01.png",
+    defective: true,
+  },
 ];
 
 export { woodboards };

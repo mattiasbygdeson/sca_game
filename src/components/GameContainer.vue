@@ -77,7 +77,7 @@ export default {
     }
   },
   created() {
-    this.shuffle(this.woodboards);
+    // this.shuffle(this.woodboards);
     this.countdown();
     setTimeout(this.endGame, this.timer * 1000);
   },
