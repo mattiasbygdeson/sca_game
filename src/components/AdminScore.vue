@@ -30,7 +30,7 @@
           <td>{{user.phone}}</td>
           <td>
             {{user.score}}
-            <!-- <span><button @click="removeItem(user.phone)" class="button-delete">Ta bort</button></span> -->
+            <span><button @click="removeItem(user._id)" class="button-delete">Ta bort</button></span>
           </td>
         </tr>
       </table>
@@ -62,9 +62,9 @@ export default {
 
       this.scoreboard = res;
     },
-    async removeItem(phone) {
+    async removeItem(id) {
       if (confirm("Are you sure you want to delete this entry?")) {
-        await removeScore(phone);
+        await removeScore(id);
       }
 
       // await removeScore(phone);

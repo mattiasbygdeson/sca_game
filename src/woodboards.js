@@ -24,7 +24,6 @@ const woodboards = [
     uri: "fine_board_04.png",
     defective: false,
   },
-
   {
     id: "10",
     uri: "defect_board_10.png",
@@ -201,7 +200,6 @@ const woodboards = [
     uri: "fine_board_04.png",
     defective: false,
   },
-
   {
     id: "06",
     uri: "defect_board_06.png",

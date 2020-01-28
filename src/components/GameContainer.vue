@@ -30,7 +30,7 @@
 
             <p class="failure">- {{(50 - this.goodboards) * 16}}p</p>
             <p class="failure">- {{this.defectboards * 80}}p</p>
-          </div>
+          </div>  
         </div>
 
         <nav>
