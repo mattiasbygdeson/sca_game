@@ -44,6 +44,8 @@
         </div>
       </div>
     </div>
+
+    <div class="background-image"></div>
   </div>
 </template>
 
@@ -87,5 +89,10 @@ export default {
 
 .column {
   text-align: center;
+}
+
+.column:nth-last-of-type(2) {
+  position: relative;
+  left: 20px;
 }
 </style>

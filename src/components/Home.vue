@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <h1>{{this.headlines.home}}</h1> -->
     <h1>{{this.headlines.home}}</h1>
 
     <p>{{this.paragraphs.introduction1}}</p>
@@ -21,6 +20,10 @@
     <router-link to="/adminscore">
       <li class="secret"></li>
     </router-link>
+
+    <video autoplay muted loop id="myVideo" class="video-background">
+      <source src="../assets/bgmovie.mp4" type="video/mp4">
+    </video>
   </div>
 </template>
 
@@ -35,8 +38,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  color: #fff;
+}
+
 p {
   width: 600px;
+  color: #fff;
 }
 
 nav {
@@ -55,6 +63,16 @@ nav {
   &:hover {
     cursor: initial;
   }
+}
+
+.video-background {
+  background-color: #000;
+  position: fixed;
+  top: -170px;
+  left: -10px;
+  width: 200vh;
+  height: 150vh;
+  z-index: -100;
 }
 
 </style>

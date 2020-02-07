@@ -32,6 +32,8 @@
         </label>
       </div>
     </form>
+
+    <div class="background-image"></div>
   </div>
 </template>
 

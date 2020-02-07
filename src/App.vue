@@ -117,6 +117,20 @@ img {
 
 #app {
   height: 100vh;
+  // background-image: url("./assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background-image {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
   background-image: url("./assets/images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;

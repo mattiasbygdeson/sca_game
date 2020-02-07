@@ -35,6 +35,12 @@
         </tr>
       </table>
     </div>
+
+    <!-- <div class="notification-container">
+      <div class="notification">
+        Notification
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -168,5 +174,13 @@ export default {
   font-size: 0.8em;
   background: #4e535e;
   color: white;
+}
+
+.notification {
+  border: 1px solid #777;
+  width: 45%;
+  height: 200px;
+  box-shadow: 10px 10px 10px #ccc;
+  margin: auto;
 }
 </style>
