@@ -152,14 +152,26 @@ button:disabled {
   // background: #44986B;
   background: linear-gradient(167deg, rgba(68,152,107,1) 0%, rgba(59,129,85,1) 100%);
   color: white;
-  
   font-weight: 600;
+
+  // box-shadow: 0px 6px 0px rgb(40, 94, 65);
+  border-top: 1px solid rgb(132, 214, 170);
+  border-right: 1px solid rgb(40, 94, 65);
+  border-left: 1px solid rgb(132, 214, 170);
+  border-bottom: 1px solid rgb(40, 94, 65);
 }
 
 .button-secondary {
-  background: #fff;
-  border: 1px solid #707070;
+  // background: #fff;
+  background: linear-gradient(167deg, rgba(255,255,255,1) 0%, rgba(226,232,236,1) 100%);
+  border-top: 1px solid #707070;
   color: #204440;
+
+  // box-shadow: 0px 6px 0px #5b606b;
+  border-top: 1px solid #999ea0;
+  border-right: 1px solid #696f72;
+  border-left: 1px solid #999ea0;
+  border-bottom: 1px solid #696f72;
 }
 
 .bottom-right {

@@ -1,7 +1,7 @@
 const headlines_eng = {
   home: "About SCA",
   instructions: "This is how you play",
-  guide: "What to look for",
+  guide: "Three different flaws to reveal a defect board",
   userForm: "Please fill the form below before you start",
   score: "Score board",
 };
@@ -25,10 +25,12 @@ const paragraphs_eng = {
   instructions5: "for every fine board you remove",
   instructions6: "for every defective board you let pass through",
 
-  guide1: "There will be three different types of flaws that will reveal if a board is defective or not.",
-  guide2: "Ugly branch spots",
-  guide3: "Branch spots that are stretched out or placed close together",
-  guide4: "Fissures",
+  guideTitle1: "Fissures",
+  guideDescription1: "Description",
+  guideTitle2: "Ugly branch spot",
+  guideDescription2: "Description",
+  guideTitle3: "Tight & long branches",
+  guideDescription3: "Description",
 
   userFormName: "Name",
   userFormCompany: "Company",
@@ -36,7 +38,7 @@ const paragraphs_eng = {
   userFormNote: "The winner will be contacted with a text message at the end of the day",
   userFormAgreement: "I agree that SCA stores this data for analyzing and marketing purposes",
 
-  score: "Score",
+  score: "Points",
   youGot: "You got",
   readMore: "Read more"
 }
@@ -44,7 +46,7 @@ const paragraphs_eng = {
 const headlines_swe = {
   home: "Om SCA",
   instructions: "Så här spelar du",
-  guide: "Vad man ska kolla efter",
+  guide: "Tre olika brister som visar om brädan är defekt",
   userForm: "Vänligen fyll i formuläret innan du börjar",
   score: "Högsta poäng",
 };
@@ -68,10 +70,12 @@ const paragraphs_swe = {
   instructions5: "för varje fin trall du råkar ta bort",
   instructions6: "för varje defekt trall du låter passera",
 
-  guide1: "Det finns tre olika brister på brädan som visar på att den är defekt:",
-  guide2: "Ful kvist",
-  guide3: "Täta och avlång kvistar",
-  guide4: "Kådlåpa",
+  guideTitle1: "Kådlåpa",
+  guideDescription1: "En hålighet i barrträvirke (oftast gran) som är helt eller delvis fylld med kåda. Övriga sprickor bör man även se över.",
+  guideTitle2: "Ful kvist",
+  guideDescription2: "Kvistar kan i olika grad påverka kvalitén och hållfastheten. Detta beror på den fiberstörning som uppkommer runt kvisten. Vissa kvistar kan lossna efter att virket torkats.",
+  guideTitle3: "Täta & avlånga kvistar",
+  guideDescription3: "Beskrivning",
 
   userFormName: "Namn",
   userFormCompany: "Företag",

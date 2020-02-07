@@ -12,28 +12,16 @@
     </nav>
 
     <div class="wrapper">
-      <div class="column">
-        <p>{{this.paragraphs.instructions1}}</p>
-        <p>{{this.paragraphs.instructions2}}</p>
+      <p>{{this.paragraphs.instructions1}}</p>
+      <p>{{this.paragraphs.instructions2}}</p>
 
-        <!-- <div class="point-description">
-          <div class="column">
-            <p><span class="badge positive">+20 p</span> {{this.paragraphs.instructions3}}</p>
-            <p><span class="badge positive">+16 p</span> {{this.paragraphs.instructions4}}</p>
-          </div>
-          
-          <div class="column">
-            <p><span class="badge negative">-16 p</span> {{this.paragraphs.instructions5}}</p>
-            <p><span class="badge negative">-80 p</span> {{this.paragraphs.instructions6}}</p>
-          </div>
-        </div> -->
-      </div>
-
-      <div class="column">
-        <!-- <img src="https://via.placeholder.com/446x297" /> -->
-        <div class="point-description">
+      <div class="point-description">
+        <div class="column">
           <p><span class="badge positive">+20 p</span> {{this.paragraphs.instructions3}}</p>
           <p><span class="badge positive">+16 p</span> {{this.paragraphs.instructions4}}</p>
+        </div>
+
+        <div class="column">
           <p><span class="badge negative">-16 p</span> {{this.paragraphs.instructions5}}</p>
           <p><span class="badge negative">-80 p</span> {{this.paragraphs.instructions6}}</p>
         </div>
@@ -53,30 +41,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-  display: grid;
-  grid-template-columns: 42% auto;
-  grid-gap: 40px;
-}
-
 .point-description {
-  // margin-top: 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  margin-top: 40px;
   font-size: 0.8em;
   display: grid;
-  background: rgba(0,0,0,0.2);
-  padding: 8px;
-  // grid-template-columns: 50% 50%;
-  // background: rgba(0,0,0,0.1);
-  // padding: 20px;
+  padding-top: 40px;
+  grid-template-columns: 50% 50%;
 
   p {
     font-weight: bold;
+    font-style: italic;
     margin-bottom: 10px;
   }
   
   .badge {
     width: 80px;
     text-align: center;
+    font-style: initial;
     display: inline-block;
     border-radius: 3px;
     padding: 6px 15px;
@@ -84,11 +66,11 @@ export default {
     margin-right: 5px;
 
     &.positive {
-      background: #00205B;
+      background: #389c68;
     }
 
     &.negative {
-      background: #873742;
+      background: #d14658;
     }
   }
 }
