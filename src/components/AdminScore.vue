@@ -63,9 +63,9 @@ export default {
       this.scoreboard = res;
     },
     async removeItem(id) {
-      if (confirm("Are you sure you want to delete this entry?")) {
-        await removeScore(id);
-      }
+      // if (confirm("Are you sure you want to delete this entry?")) {
+      await removeScore(id);
+      // }
 
       // await removeScore(phone);
       this.requestScoreList();
