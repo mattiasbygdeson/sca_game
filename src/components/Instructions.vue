@@ -58,12 +58,12 @@ export default {
   }
   
   .badge {
-    width: 80px;
+    width: 66px;
     text-align: center;
     font-style: initial;
     display: inline-block;
     border-radius: 3px;
-    padding: 6px 15px;
+    padding: 6px 0px;
     color: white;
     margin-right: 5px;
 

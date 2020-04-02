@@ -1,7 +1,7 @@
 <template>
   <header>
     <router-link to="/">
-      <img src="../assets/images/logo.png" alt="" width="146" />
+      <img class="logotype" src="../assets/images/logo.png" alt="SCA logotype" />
     </router-link>
 
     <nav class="menu-language">
@@ -29,7 +29,12 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  padding: 1%;
+  padding: 10px;
+  background: #f9faf9;
+
+  .logotype {
+    width: 80px;
+  }
 }
 
 .menu-language {
@@ -38,8 +43,8 @@ header {
 
 .button-language {
   border: 0;
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   margin-left: 20px;
   border-radius: 50px;
   background-size: 100%;
@@ -50,6 +55,10 @@ header {
 
   &.icon-swe {
     background-image: url("../assets/images/flag-swe.png");
+  }
+
+  &:focus {
+    outline: 0;
   }
 }
 </style>

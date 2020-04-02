@@ -151,7 +151,7 @@ li, button {
   padding: 15px;
   width: 210px;
   height: 60px;
-  border-radius: 50px;
+  border-radius: 5px;
   text-align: center;
   font-size: 1.5em;
   border: 0;
@@ -164,15 +164,9 @@ button:disabled {
 
 .button-primary {
   // background: #44986B;
-  background: linear-gradient(167deg, rgba(68,152,107,1) 0%, rgba(59,129,85,1) 100%);
+  background: #44986b;
   color: white;
   font-weight: 600;
-
-  // box-shadow: 0px 6px 0px rgb(40, 94, 65);
-  border-top: 1px solid rgb(132, 214, 170);
-  border-right: 1px solid rgb(40, 94, 65);
-  border-left: 1px solid rgb(132, 214, 170);
-  border-bottom: 1px solid rgb(40, 94, 65);
 }
 
 .button-secondary {
