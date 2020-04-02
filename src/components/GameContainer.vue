@@ -54,7 +54,7 @@
 <script>
 import Woodboard from "./Woodboard";
 import { woodboards } from "../woodboards.js";
-import { setScore } from "../api.js";
+// import { setScore } from "../api.js";
 
 export default {
   name: 'GameContainer',
@@ -78,8 +78,8 @@ export default {
   },
   created() {
     // this.shuffle(this.woodboards);
-    this.countdown();
-    setTimeout(this.endGame, this.timer * 1000);
+    // this.countdown();
+    // setTimeout(this.endGame, this.timer * 1000);
   },
   methods: {
     shuffle(array) {
@@ -125,12 +125,12 @@ export default {
       }
 
       // Save result to database
-      const name = this.current_player.name;
-      const company = this.current_player.company;
-      const phone = this.current_player.phone;
-      const score = this.score;
+      // const name = this.current_player.name;
+      // const company = this.current_player.company;
+      // const phone = this.current_player.phone;
+      // const score = this.score;
       
-      await setScore(name, company, phone, score);
+      // await setScore(name, company, phone, score);
     },
     restart() {
       this.retry++;
@@ -152,8 +152,8 @@ export default {
 <style lang="scss" scoped>
 
 @keyframes move {
-  from { left: -200 * 60px; }
-  to { left: 100vw }
+  from { transform: translateX(-200 * 60px) }
+  to { transform: translateX(100vw) }
 }
 
 @keyframes decrease {
@@ -162,11 +162,9 @@ export default {
 }
 
 .boards-container {
-  position: relative;
-  width: 200 * 81px;
-  left: -200 * 60px;
+  width: 200 * 60px;
 
-  background-image: url("../assets/images/beltbg2.jpg");
+  // background-image: url("../assets/images/beltbg2.jpg");
 
   animation-name: move;
   animation-duration: 60s;
@@ -179,7 +177,7 @@ export default {
   // background-image: url("../assets/images/bottombarbg.jpg");
   // background-size: 100%;
   background-size: cover;
-  border-top: 10px solid #2c3137;
+  // border-top: 10px solid #2c3137;
   background: linear-gradient(139deg, rgba(165,168,169,1) 0%, rgba(125,127,127,1) 100%);
 
   p {
@@ -204,7 +202,7 @@ export default {
 }
 
 .game-wrapper {
-  background-image: url("../assets/images/beltbg2.jpg");
+  // background-image: url("../assets/images/beltbg2.jpg");
   position: absolute;
   top: 0;
   left: 0;
