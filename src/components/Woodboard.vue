@@ -38,30 +38,36 @@ export default {
 }
 
 .woodboard {
+  position: relative;
+  bottom: 120px;
+  perspective: 50em;
   display: inline-block;
   text-align: center;
-  font-size: 0.75em;
   width: 200px;
+
+  // border: 2px solid red;
 
   &:hover {
     cursor: pointer;
   }
 
   img {
-    height: 80vh;
+    height: 90vh;
+    transform: rotateX(30deg);
   }
 }
 
 @keyframes slideout {
   from { transform: translateY(0) }
-  to { transform: translateY(100vh) }
+  to { transform: translateY(130vh) }
 }
 
 .removed {
   animation-name: slideout;
   animation-duration: 0.5s;
-  animation-timing-function: ease-in;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
+  // display: none;
 
   &:hover {
     cursor: initial;

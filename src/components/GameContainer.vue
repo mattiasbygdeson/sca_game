@@ -1,5 +1,7 @@
 <template>
   <div class="game-wrapper" v-scroll-lock="true">
+    <div class="conveyor-belt" />
+
     <div :key="retry" class="boards-container">
       <Woodboard
         v-for="woodboard in woodboards" 
@@ -9,7 +11,7 @@
         v-on:remove-point="removePoint"
       />
     </div>
-    
+
     <div v-if="gameover" class="score-container">
       <div class="score">
         <p class="name">{{current_player.name}}</p>
@@ -156,29 +158,44 @@ export default {
   to { transform: translateX(100vw) }
 }
 
-@keyframes decrease {
-  from { width: 100%; }
-  to {width: 0%; }
+@keyframes roll {
+  from { transform: translateX(-200px) }
+  to { transform: translateX(0) }
 }
 
 .boards-container {
-  width: 200 * 60px;
-
-  // background-image: url("../assets/images/beltbg2.jpg");
+  width: 200 * 60px + 200px;
+  height: 80vh;
+  
+  transform: translateX(-200 * 60px);
 
   animation-name: move;
-  animation-duration: 60s;
+  animation-duration: 60000ms;
   animation-timing-function: linear;
+  will-change: transform;
+}
+
+.conveyor-belt {
+  height: 80vh;
+  width: 200%;
+  position: absolute;
+  top: 0;
+  transform: translateX(200px);
+
+  animation-name: roll;
+  animation-duration: 925ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  background-image: url("../assets/images/beltbg3.jpg");
+  background-position: bottom;
 }
 
 .bottom-bar {
   min-width: 50px;
   min-height: 200px;
-  // background-image: url("../assets/images/bottombarbg.jpg");
-  // background-size: 100%;
-  background-size: cover;
-  // border-top: 10px solid #2c3137;
-  background: linear-gradient(139deg, rgba(165,168,169,1) 0%, rgba(125,127,127,1) 100%);
+  background-size: 30%;
+  background-image: url("../assets/images/metal-background.jpg");
 
   p {
     color: white;
@@ -188,16 +205,16 @@ export default {
   }
 
   .progress-bar {
-    width: 100%;
-    height: 10px;
-    background: #389c68;
-    position: fixed;
-    bottom: 0;
+    // width: 100%;
+    // height: 10px;
+    // background: #389c68;
+    // position: fixed;
+    // bottom: 0;
 
-    animation-name: decrease;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    // // animation-name: decrease;
+    // animation-duration: 60s;
+    // animation-timing-function: linear;
+    // animation-fill-mode: forwards;
   }
 }
 
@@ -207,6 +224,9 @@ export default {
   top: 0;
   left: 0;
   height: 100vh;
+  width: 100vw;
+  background: white;
+  // border: 2px solid red;
 }
 
 .score-container {
