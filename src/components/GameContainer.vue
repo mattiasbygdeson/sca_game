@@ -19,7 +19,7 @@
 
         <div class="summary">
           <div>
-            <p class="success">{{this.goodboards}} fine woodboards passed through </p>
+            <p class="success">{{this.goodboards}} fine woodboards passed through</p>
             <p class="success">{{10 - this.defectboards}} defective woodboards were removed</p>
 
             <p class="failure">{{50 - this.goodboards}} fine woodboards were removed</p>
@@ -166,6 +166,9 @@ export default {
 .boards-container {
   width: 200 * 60px + 200px;
   height: 80vh;
+
+  backface-visibility: hidden;
+  perspective: 1000;
   
   transform: translateX(-200 * 60px);
 
