@@ -6,7 +6,9 @@
       <router-view 
         :headlines="headlines" 
         :paragraphs="paragraphs"
+        :product_paragraphs="product_paragraphs"
         :current_player="this.current_player"
+        :products="products"
         v-on:submit-form="registerUser"
       ></router-view>
     </main>
@@ -15,8 +17,11 @@
 
 <script>
 import Header from "./layout/Header";
-import { headlines_eng, paragraphs_eng } from "./strings.js";
-import { headlines_swe, paragraphs_swe } from "./strings.js";
+import { headlines_eng, general_paragraphs_eng } from "./strings.js";
+import { headlines_swe, general_paragraphs_swe } from "./strings.js";
+
+// Import products
+import * as decking from "./products/decking.js";
 
 export default {
   name: 'app',
@@ -26,8 +31,11 @@ export default {
   data() {
     return {
       headlines: headlines_eng,
-      paragraphs: paragraphs_eng,
+      paragraphs: general_paragraphs_eng,
       current_player: {},
+
+      products: decking.products,
+      product_paragraphs: decking.paragraphs_eng,
     }
   },
   methods: {
@@ -37,12 +45,14 @@ export default {
     getStrings(lang) {
       if(lang == "eng"){
         this.headlines = headlines_eng;
-        this.paragraphs = paragraphs_eng;
+        this.paragraphs = general_paragraphs_eng;
+        this.product_paragraphs = decking.paragraphs_eng;
       }
 
       if(lang == "swe"){
         this.headlines = headlines_swe;
-        this.paragraphs = paragraphs_swe;
+        this.paragraphs = general_paragraphs_swe;
+        this.product_paragraphs = decking.paragraphs_swe;
       }
     }
   }

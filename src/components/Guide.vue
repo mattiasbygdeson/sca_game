@@ -13,15 +13,12 @@
       </ul>
     </nav>
 
-    <!-- <p>{{this.paragraphs.guide1}}</p> -->
-
     <div class="wrapper">
       <div class="column">
         <img src="../assets/images/sample1.png" />
 
         <div class="text-container">
-          <h2>{{this.paragraphs.guideTitle1}}</h2>
-          <!-- <p>{{this.paragraphs.guideDescription1}}</p> -->
+          <h2>{{this.product_paragraphs.guide1}}</h2>
         </div>
       </div>
 
@@ -29,8 +26,7 @@
         <img src="../assets/images/sample2.png" />
 
         <div class="text-container">
-          <h2>{{this.paragraphs.guideTitle2}}</h2>
-          <!-- <p>{{this.paragraphs.guideDescription2}}</p> -->
+          <h2>{{this.product_paragraphs.guide2}}</h2>
         </div>
         
       </div>
@@ -39,8 +35,7 @@
         <img src="../assets/images/sample3.png" />
         
         <div class="text-container">
-          <h2>{{this.paragraphs.guideTitle3}}</h2>
-          <!-- <p>{{this.paragraphs.guideDescription3}}</p> -->
+          <h2>{{this.product_paragraphs.guide3}}</h2>
         </div>
       </div>
     </div>
@@ -54,7 +49,8 @@ export default {
   name: 'Guide',
   props: {
     headlines: Object,
-    paragraphs: Object
+    paragraphs: Object,
+    product_paragraphs: Object,
   }
 }
 </script>

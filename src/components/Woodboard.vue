@@ -1,6 +1,6 @@
 <template>
   <div class="woodboard" :class="{removed : isRemoved}" @click="removeBoard">
-    <img :src="require(`@/assets/woodboards/${this.woodboard.uri}`)" />
+    <img :src="require(`@/products/decking/${this.product.uri}`)" />
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: 'Woodboard',
   props: {
-    woodboard: Object
+    product: Object
   },
   data() {
     return {

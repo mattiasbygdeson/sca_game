@@ -4,9 +4,9 @@
 
     <div :key="retry" class="boards-container">
       <Woodboard
-        v-for="woodboard in woodboards" 
-        :key="woodboard.id" 
-        :woodboard="woodboard" 
+        v-for="product in products" 
+        :key="product.id"
+        :product="product" 
         v-on:add-point="addPoint" 
         v-on:remove-point="removePoint"
       />
@@ -55,21 +55,20 @@
 
 <script>
 import Woodboard from "./Woodboard";
-import { woodboards } from "../woodboards.js";
 // import { setScore } from "../api.js";
 
 export default {
   name: 'GameContainer',
   props: {
     paragraphs: Object,
-    current_player: Object
+    current_player: Object,
+    products: Array,
   },
   components: {
     Woodboard,
   },
   data() {
     return {
-      woodboards: woodboards,
       score: 0,
       gameover: false,
       timer: 60,
