@@ -47,7 +47,7 @@
     </div>
 
     <div v-if="!gameover" class="bottom-bar">
-      <p class="bottom-right">{{this.timer}}</p>
+      <p class="">{{this.timer}}</p>
       <div :key="retry" class="progress-bar"></div>
     </div>
   </div>
@@ -79,7 +79,7 @@ export default {
   },
   created() {
     // this.shuffle(this.woodboards);
-    // this.countdown();
+    this.countdown();
     // setTimeout(this.endGame, this.timer * 1000);
   },
   methods: {
@@ -175,8 +175,6 @@ export default {
   animation-duration: 60000ms;
   animation-timing-function: linear;
   will-change: transform;
-
-  border: 2px solid blue;
 }
 
 .conveyor-belt {
@@ -198,16 +196,26 @@ export default {
 }
 
 .bottom-bar {
-  min-width: 50px;
-  min-height: 200px;
-  background-size: 30%;
-  background-image: url("../assets/images/metal-background.jpg");
+  // min-width: 50px;
+  // min-height: 200px;
+  // background-size: 30%;
+  // background-image: url("../assets/images/metal-background.jpg");
+
+  background: #44986b;
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  margin: 15px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 
   p {
     color: white;
-    font-size: 3em;
+    font-size: 2.5em;
     padding-top: 10px;
-    bottom: 25px;
+    text-align: center;
   }
 
   .progress-bar {

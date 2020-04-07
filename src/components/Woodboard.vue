@@ -46,8 +46,6 @@ export default {
   min-width: 200px;
   max-width: 200px;
 
-  // border: 2px solid red;
-
   &:hover {
     cursor: pointer;
   }

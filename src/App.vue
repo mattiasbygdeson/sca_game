@@ -42,9 +42,9 @@ export default {
       paragraphs: general_paragraphs_eng,
       current_player: {},
 
-      products: ducks.products,
-      product_paragraphs: ducks.paragraphs_eng,
-      guide_images: ducks.guide_images,
+      products: decking.products,
+      product_paragraphs: decking.paragraphs_eng,
+      guide_images: decking.guide_images,
     }
   },
   methods: {
@@ -209,7 +209,6 @@ button:disabled {
 }
 
 .button-primary {
-  // background: #44986B;
   background: #44986b;
   color: white;
   font-weight: 600;
