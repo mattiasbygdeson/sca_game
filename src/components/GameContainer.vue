@@ -164,7 +164,7 @@ export default {
 
 .boards-container {
   width: 200 * 60px + 200px;
-  height: 80vh;
+  height: 100vh;
 
   backface-visibility: hidden;
   perspective: 1000;
@@ -175,10 +175,12 @@ export default {
   animation-duration: 60000ms;
   animation-timing-function: linear;
   will-change: transform;
+
+  border: 2px solid blue;
 }
 
 .conveyor-belt {
-  height: 80vh;
+  height: 100vh;
   width: 200%;
   position: absolute;
   top: 0;
@@ -189,8 +191,10 @@ export default {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 
-  background-image: url("../assets/images/beltbg3.jpg");
-  background-position: bottom;
+  background-image: url("../assets/images/beltbg4.jpg");
+  // background-position: bottom;
+  // background-size: 100%
+  // background-;
 }
 
 .bottom-bar {

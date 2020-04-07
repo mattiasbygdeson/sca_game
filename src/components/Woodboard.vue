@@ -20,7 +20,7 @@ export default {
       if(!this.isRemoved) {
         this.isRemoved = true;
 
-        if(this.woodboard.defective) {
+        if(this.product.defective) {
           this.$emit('add-point');
         } else {
           this.$emit('remove-point');
@@ -38,12 +38,13 @@ export default {
 }
 
 .woodboard {
-  position: relative;
-  bottom: 120px;
-  perspective: 50em;
+  // position: relative;
+  // bottom: 120px;
+  // perspective: 50em;
   display: inline-block;
   text-align: center;
-  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
 
   // border: 2px solid red;
 
@@ -53,7 +54,7 @@ export default {
 
   img {
     height: 90vh;
-    transform: rotateX(30deg);
+    // transform: rotateX(30deg);
   }
 }
 
