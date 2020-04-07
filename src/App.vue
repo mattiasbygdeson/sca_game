@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <Header v-on:change-lang="getStrings" />
+    <Header 
+      v-on:change-lang="setLanguage"
+      v-on:set-content="setContent"
+      :paragraphs="paragraphs"
+    />
 
     <main>
       <router-view 
@@ -9,7 +13,8 @@
         :product_paragraphs="product_paragraphs"
         :current_player="this.current_player"
         :products="products"
-        v-on:submit-form="registerUser"
+        :guide_images="guide_images"
+        v-on:submit-form="setUser"
       ></router-view>
     </main>
   </div>
@@ -21,7 +26,8 @@ import { headlines_eng, general_paragraphs_eng } from "./strings.js";
 import { headlines_swe, general_paragraphs_swe } from "./strings.js";
 
 // Import products
-import * as decking from "./products/decking.js";
+import * as decking from "./products/decking/decking.js";
+import * as ducks from "./products/ducks/ducks.js";
 
 export default {
   name: 'app',
@@ -30,30 +36,60 @@ export default {
   },
   data() {
     return {
+      lang: "eng",
+      product_type: "decking",
       headlines: headlines_eng,
       paragraphs: general_paragraphs_eng,
       current_player: {},
 
-      products: decking.products,
-      product_paragraphs: decking.paragraphs_eng,
+      products: ducks.products,
+      product_paragraphs: ducks.paragraphs_eng,
+      guide_images: ducks.guide_images,
     }
   },
   methods: {
-    registerUser(current_player) {
+    setContent(type) {
+      this.product_type = type;
+
+      switch(type) {
+        case 'ducks':
+          this.products = ducks.products;
+          this.guide_images = ducks.guide_images;
+          if(this.lang == "eng") { this.product_paragraphs = ducks.paragraphs_eng; }
+          if(this.lang == "swe") { this.product_paragraphs = ducks.paragraphs_swe; }
+          break;
+        case 'decking':
+          this.products = decking.products;
+          this.guide_images = decking.guide_images;
+          if(this.lang == "eng") { this.product_paragraphs = decking.paragraphs_eng; }
+          if(this.lang == "swe") { this.product_paragraphs = decking.paragraphs_swe; }
+          break;
+        default:
+          this.products = decking.products;
+          this.guide_images = decking.guide_images;
+          if(this.lang == "eng") { this.product_paragraphs = decking.paragraphs_eng; }
+          if(this.lang == "swe") { this.product_paragraphs = decking.paragraphs_swe; }
+          break;
+      }
+    },
+    setUser(current_player) {
       this.current_player = current_player;
     },
-    getStrings(lang) {
+    setLanguage(lang) {
+      this.lang = lang;
+
       if(lang == "eng"){
         this.headlines = headlines_eng;
         this.paragraphs = general_paragraphs_eng;
-        this.product_paragraphs = decking.paragraphs_eng;
       }
 
       if(lang == "swe"){
         this.headlines = headlines_swe;
         this.paragraphs = general_paragraphs_swe;
-        this.product_paragraphs = decking.paragraphs_swe;
       }
+
+      // Reset content to display correct language
+      this.setContent(this.product_type);
     }
   }
 }

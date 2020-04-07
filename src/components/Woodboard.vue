@@ -1,6 +1,6 @@
 <template>
   <div class="woodboard" :class="{removed : isRemoved}" @click="removeBoard">
-    <img :src="require(`@/products/decking/${this.product.uri}`)" />
+    <img :src="require(`@/products/${this.product.uri}`)" />
   </div>
 </template>
 

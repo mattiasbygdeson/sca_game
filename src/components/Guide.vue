@@ -15,7 +15,7 @@
 
     <div class="wrapper">
       <div class="column">
-        <img src="../assets/images/sample1.png" />
+        <img :src="require(`@/products/${this.guide_images.guideImage1}`)" />
 
         <div class="text-container">
           <h2>{{this.product_paragraphs.guide1}}</h2>
@@ -23,16 +23,15 @@
       </div>
 
       <div class="column">
-        <img src="../assets/images/sample2.png" />
+        <img :src="require(`@/products/${this.guide_images.guideImage2}`)" />
 
         <div class="text-container">
           <h2>{{this.product_paragraphs.guide2}}</h2>
         </div>
-        
       </div>
 
       <div class="column">
-        <img src="../assets/images/sample3.png" />
+        <img :src="require(`@/products/${this.guide_images.guideImage3}`)" />
         
         <div class="text-container">
           <h2>{{this.product_paragraphs.guide3}}</h2>
@@ -51,6 +50,7 @@ export default {
     headlines: Object,
     paragraphs: Object,
     product_paragraphs: Object,
+    guide_images: Object,
   }
 }
 </script>
@@ -79,16 +79,12 @@ export default {
   }
 }
 
-.text-container:nth-of-type(2) {
-  border: 2px solid red;
-}
-
 .column {
   text-align: center;
 }
 
-.column:nth-last-of-type(2) {
-  position: relative;
-  left: 20px;
-}
+// .column:nth-last-of-type(2) {
+//   position: relative;
+//   left: 20px;
+// }
 </style>

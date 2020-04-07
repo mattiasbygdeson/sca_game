@@ -26,6 +26,11 @@ const general_paragraphs_eng = {
   buttonScore: "Score board",
   buttonTryAgain: "Play again",
 
+  positiveScoreDescription1: "for every defective product you remove",
+  positiveScoreDescription2: "for every fine product you let pass through",
+  negativeScoreDescription1: "for every fine product you remove",
+  negativeScoreDescription2: "for every defective product you let pass through",
+
   userFormName: "Name",
   userFormCompany: "Company",
   userFormPhone: "Phone number",
@@ -34,7 +39,10 @@ const general_paragraphs_eng = {
 
   score: "Points",
   youGot: "You got",
-  readMore: "Read more"
+  readMore: "Read more",
+
+  decking: "Decking",
+  ducks: "Ducks"
 }
 
 const general_paragraphs_swe = {
@@ -49,16 +57,10 @@ const general_paragraphs_swe = {
   buttonScore: "Högsta poäng",
   buttonTryAgain: "Spela igen",
 
-  // instructions1: "Under 60 sekunder kommer våra trall X-Ray 2.0 att passera på ett rullband, du har cirka 3 sekunder på dig att bedöma om trallbrädan är OK för godkännande eller om den ska sorteras ur. Det är totalt 60 brädor varav 10 inte är godkända. Om trallen är godkänd låter du den passera. Är den inte godkänd klickar du på den så försvinner den ur ledet.",
-  // instructions2: "Då du spelat klart hamnar topp 8 för dagen på en lista så alla kan se hur bra du är!",
-  // instructions3: "för varje defekt trall du tar bort",
-  // instructions4: "för varje fin trall du låter passera",
-  // instructions5: "för varje fin trall du råkar ta bort",
-  // instructions6: "för varje defekt trall du låter passera",
-
-  // guideTitle1: "Kådlåpa",
-  // guideTitle2: "Ful kvist",
-  // guideTitle3: "Täta & avlånga kvistar",
+  positiveScoreDescription1: "för varje defekt produkt du tar bort",
+  positiveScoreDescription2: "för varje fin produkt du låter passera",
+  negativeScoreDescription1: "för varje fin produkt du råkar ta bort",
+  negativeScoreDescription2: "för varje defekt produkt du låter passera",
 
   userFormName: "Namn",
   userFormCompany: "Företag",
@@ -68,7 +70,10 @@ const general_paragraphs_swe = {
 
   score: "Poäng",
   youGot: "Du fick",
-  readMore: "Läs mer"
+  readMore: "Läs mer",
+
+  decking: "Trall",
+  ducks: "Ankor"
 }
 
 export { headlines_eng, general_paragraphs_eng, headlines_swe, general_paragraphs_swe };

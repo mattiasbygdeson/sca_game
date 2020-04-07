@@ -12,18 +12,18 @@
     </nav>
 
     <div class="wrapper">
-      <p>{{this.paragraphs.instructions1}}</p>
-      <p>{{this.paragraphs.instructions2}}</p>
+      <p>{{this.product_paragraphs.instructions1}}</p>
+      <p>{{this.product_paragraphs.instructions2}}</p>
 
       <div class="point-description">
         <div class="column">
-          <p><span class="badge positive">+20 p</span> {{this.paragraphs.instructions3}}</p>
-          <p><span class="badge positive">+16 p</span> {{this.paragraphs.instructions4}}</p>
+          <p><span class="badge positive">+20 p</span> {{this.paragraphs.positiveScoreDescription1}}</p>
+          <p><span class="badge positive">+16 p</span> {{this.paragraphs.positiveScoreDescription2}}</p>
         </div>
 
         <div class="column">
-          <p><span class="badge negative">-16 p</span> {{this.paragraphs.instructions5}}</p>
-          <p><span class="badge negative">-80 p</span> {{this.paragraphs.instructions6}}</p>
+          <p><span class="badge negative">-16 p</span> {{this.paragraphs.negativeScoreDescription1}}</p>
+          <p><span class="badge negative">-80 p</span> {{this.paragraphs.negativeScoreDescription2}}</p>
         </div>
       </div>
     </div>
@@ -37,7 +37,8 @@ export default {
   name: 'Instructions',
   props: {
     headlines: Object,
-    paragraphs: Object
+    paragraphs: Object,
+    product_paragraphs: Object,
   }
 }
 </script>

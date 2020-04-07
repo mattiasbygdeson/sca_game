@@ -4,11 +4,16 @@
       <img class="logotype" src="../assets/images/logo.png" alt="SCA logotype" />
     </router-link>
 
-    <nav class="menu-language">
+    <nav class="submenu">
+      <select @change="$emit('set-content', type)" class="dropdown-menu" id="materials" v-model="type">
+        <option value="decking">{{this.paragraphs.decking}}</option>
+        <option value="ducks">{{this.paragraphs.ducks}}</option>
+      </select>
+
       <button 
         class="button-language icon-eng" 
         aria-label="Switch to english language" 
-        title="English" 
+        title="English"
         @click="$emit('change-lang', 'eng')"
       />
       <button 
@@ -23,7 +28,15 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    paragraphs: Object,
+  },
+  data() {
+    return {
+      type: "decking",
+    }
+  }
 }
 </script>
 
@@ -37,7 +50,7 @@ header {
   }
 }
 
-.menu-language {
+.submenu {
   float: right;
 }
 
@@ -48,6 +61,8 @@ header {
   margin-left: 20px;
   border-radius: 50px;
   background-size: 100%;
+  position: relative;
+  bottom: 5px;
 
   &.icon-eng {
     background-image: url("../assets/images/flag-eng.png");
@@ -60,5 +75,11 @@ header {
   &:focus {
     outline: 0;
   }
+}
+
+.dropdown-menu {
+  // border: 2px solid red;
+  height: 30px;
+  width: 200px;
 }
 </style>
