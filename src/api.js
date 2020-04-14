@@ -29,13 +29,14 @@ async function getScoreList(type) {
   }
 }
 
-async function setScore(name, company, phone, score) {
+async function setScore(name, company, phone, score, type) {
   try {
     const response = await instance.post(url, {
       name: name,
       company: company,
       phone: phone,
-      score: score
+      score: score,
+      type: type
     });
     return response;
   } catch (error) {

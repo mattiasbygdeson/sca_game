@@ -55,7 +55,7 @@
 
 <script>
 import Woodboard from "./Woodboard";
-// import { setScore } from "../api.js";
+import { setScore } from "../api.js";
 
 export default {
   name: 'GameContainer',
@@ -63,6 +63,7 @@ export default {
     paragraphs: Object,
     current_player: Object,
     products: Array,
+    product_type: String,
   },
   components: {
     Woodboard,
@@ -80,7 +81,7 @@ export default {
   created() {
     // this.shuffle(this.woodboards);
     this.countdown();
-    // setTimeout(this.endGame, this.timer * 1000);
+    setTimeout(this.endGame, this.timer * 1000);
   },
   methods: {
     shuffle(array) {
@@ -126,12 +127,13 @@ export default {
       }
 
       // Save result to database
-      // const name = this.current_player.name;
-      // const company = this.current_player.company;
-      // const phone = this.current_player.phone;
-      // const score = this.score;
+      const name = this.current_player.name;
+      const company = this.current_player.company;
+      const phone = this.current_player.phone;
+      const score = this.score;
+      const type = this.product_type;
       
-      // await setScore(name, company, phone, score);
+      await setScore(name, company, phone, score, type);
     },
     restart() {
       this.retry++;
