@@ -17,9 +17,11 @@ const instance = axios.create({
 });
 
 // Exports
-async function getScoreList() {
+async function getScoreList(type) {
+  const extension = "/type/" + type;
+
   try {
-    const response = await instance.get(url);
+    const response = await instance.get(url + extension);
     return response.data;
   } catch (error) {
     // eslint-disable-next-line no-console

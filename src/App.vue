@@ -14,6 +14,7 @@
         :current_player="this.current_player"
         :products="products"
         :guide_images="guide_images"
+        :product_type="product_type"
         v-on:submit-form="setUser"
       ></router-view>
     </main>

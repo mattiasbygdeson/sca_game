@@ -2,8 +2,6 @@
   <div>
     <h2>{{this.headlines.score}}</h2>
 
-
-
     <nav class="bottom-right">
       <router-link to="/">
         <button class="button-secondary">{{this.paragraphs.buttonAbort}}</button>
@@ -42,13 +40,14 @@ export default {
   props: {
     headlines: Object,
     paragraphs: Object,
+    product_type: String,
   },
   created() {
     this.requestScoreList();
   },
   methods: {
     async requestScoreList() {
-      let res = await getScoreList();
+      let res = await getScoreList(this.product_type);
       this.loading = false;
       res = res.sort(this.compare);
       res = res.slice(0,8);
