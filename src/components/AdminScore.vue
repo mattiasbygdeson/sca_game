@@ -58,12 +58,15 @@ export default {
       passStored: "massasca!2020"
     }
   },
+  props: {
+    product_type: String,
+  },
   created() {
     this.requestScoreList();
   },
   methods: {
     async requestScoreList() {
-      let res = await getScoreList();
+      let res = await getScoreList(this.product_type);
       res = res.sort(this.compare);
 
       this.scoreboard = res;
