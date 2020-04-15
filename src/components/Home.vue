@@ -6,7 +6,7 @@
     <p>{{this.paragraphs.introduction2}}</p>
     <p>{{this.paragraphs.introduction3}}</p>
 
-    <h2>Choose your timber type</h2>
+    <h2>{{this.headlines.woodtype}}</h2>
 
     <nav>
       <select @change="$emit('set-content', product_type)" class="dropdown-menu" id="materials" v-model="product_type">
@@ -32,11 +32,6 @@
 <script>
 export default {
   name: 'Home',
-  data() {
-    return {
-      type: "decking",
-    }
-  },
   props: {
     headlines: Object,
     paragraphs: Object,

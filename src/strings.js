@@ -4,6 +4,7 @@ const headlines_eng = {
   guide: "Three different flaws to reveal a defect board",
   userForm: "Please fill the form below before you start",
   score: "Score board",
+  woodtype: "Choose your timber type"
 };
 
 const headlines_swe = {
@@ -12,6 +13,7 @@ const headlines_swe = {
   guide: "Tre olika brister som visar om brädan är defekt",
   userForm: "Vänligen fyll i formuläret innan du börjar",
   score: "Högsta poäng",
+  woodtype: "Välj typ av virke"
 };
 
 const general_paragraphs_eng = {
