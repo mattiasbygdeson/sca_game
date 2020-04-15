@@ -11,7 +11,7 @@
     <nav>
       <select @change="$emit('set-content', product_type)" class="dropdown-menu" id="materials" v-model="product_type">
         <option value="decking">{{this.paragraphs.decking}}</option>
-        <option value="ducks">{{this.paragraphs.ducks}}</option>
+        <!-- <option value="ducks">{{this.paragraphs.ducks}}</option> -->
       </select>
 
       <button @click="$router.push('/instructions')" class="button-primary">

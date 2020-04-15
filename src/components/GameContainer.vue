@@ -79,24 +79,23 @@ export default {
     }
   },
   created() {
-    // this.shuffle(this.woodboards);
     this.countdown();
     setTimeout(this.endGame, this.timer * 1000);
   },
   methods: {
-    shuffle(array) {
-      var ctr = array.length, temp, index;
+    // shuffle(array) {
+    //   var ctr = array.length, temp, index;
 
-      while (ctr > 0) {
-        index = Math.floor(Math.random() * ctr);
-        ctr--;
-        temp = array[ctr];
-        array[ctr] = array[index];
-        array[index] = temp;
-      }
+    //   while (ctr > 0) {
+    //     index = Math.floor(Math.random() * ctr);
+    //     ctr--;
+    //     temp = array[ctr];
+    //     array[ctr] = array[index];
+    //     array[index] = temp;
+    //   }
 
-      this.woodboards = array;
-    },
+    //   this.woodboards = array;
+    // },
     countdown() {
       if(this.timer > 0) {
         setTimeout(() => {
@@ -144,7 +143,6 @@ export default {
       this.goodboards = 50;
       this.defectboards = 10;
 
-      this.shuffle(this.woodboards);
       this.countdown();
       setTimeout(this.endGame, this.timer * 1000);
     }
