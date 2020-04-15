@@ -2,7 +2,6 @@
   <div id="app">
     <Header 
       v-on:change-lang="setLanguage"
-      v-on:set-content="setContent"
       :paragraphs="paragraphs"
     />
 
@@ -16,6 +15,7 @@
         :guide_images="guide_images"
         :product_type="product_type"
         v-on:submit-form="setUser"
+        v-on:set-content="setContent"
       ></router-view>
     </main>
   </div>
@@ -195,12 +195,12 @@ a {
 
 li, button {
   display: inline-block;
-  padding: 15px;
-  width: 210px;
-  height: 60px;
-  border-radius: 5px;
+  padding: 13px;
+  width: 200px;
+  height: 50px;
+  border-radius: 2px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border: 0;
 }
 
@@ -212,12 +212,12 @@ button:disabled {
 .button-primary {
   background: #44986b;
   color: white;
-  font-weight: 600;
+  // font-weight: 600;
 }
 
 .button-secondary {
   // background: #fff;
-  background: linear-gradient(167deg, rgba(255,255,255,1) 0%, rgba(226,232,236,1) 100%);
+  // background: linear-gradient(167deg, rgba(255,255,255,1) 0%, rgba(226,232,236,1) 100%);
   border-top: 1px solid #707070;
   color: #204440;
 

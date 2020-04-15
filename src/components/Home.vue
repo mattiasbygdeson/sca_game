@@ -6,15 +6,17 @@
     <p>{{this.paragraphs.introduction2}}</p>
     <p>{{this.paragraphs.introduction3}}</p>
 
+    <h2>Choose your timber type</h2>
+
     <nav>
-      <ul>
-        <router-link to="/instructions">
-          <button class="button-primary">{{this.paragraphs.buttonContinue}}</button>
-        </router-link>
-        <router-link to="/score">
-          <button class="button-secondary">{{this.paragraphs.buttonScore}}</button>
-        </router-link>
-      </ul>
+      <select @change="$emit('set-content', product_type)" class="dropdown-menu" id="materials" v-model="product_type">
+        <option value="decking">{{this.paragraphs.decking}}</option>
+        <option value="ducks">{{this.paragraphs.ducks}}</option>
+      </select>
+
+      <button @click="$router.push('/instructions')" class="button-primary">
+        {{this.paragraphs.buttonContinue}}
+      </button>
     </nav>
 
     <router-link to="/adminscore">
@@ -30,9 +32,15 @@
 <script>
 export default {
   name: 'Home',
+  data() {
+    return {
+      type: "decking",
+    }
+  },
   props: {
     headlines: Object,
-    paragraphs: Object
+    paragraphs: Object,
+    product_type: String,
   }
 }
 </script>
@@ -42,13 +50,21 @@ h1 {
   color: #fff;
 }
 
+h2 {
+  color: #fff;
+  font-size: 1.4em;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
 p {
   width: 600px;
+  font-size: 1em;
   color: #fff;
 }
 
 nav {
-  margin-top: 70px;
+  margin-top: 25px;
 }
 
 .secret {
@@ -73,6 +89,15 @@ nav {
   width: 200vh;
   height: 150vh;
   z-index: -100;
+}
+
+.dropdown-menu {
+  width: 200px;
+  height: 50px;
+  font-size: 1.2em;
+  border-radius: 2px;
+  padding-left: 10px;
+  margin-right: 10px;
 }
 
 </style>

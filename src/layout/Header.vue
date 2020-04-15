@@ -5,10 +5,13 @@
     </router-link>
 
     <nav class="submenu">
-      <select @change="$emit('set-content', type)" class="dropdown-menu" id="materials" v-model="type">
+      <router-link to="/score">
+        {{this.paragraphs.buttonScore}}
+      </router-link>
+      <!-- <select @change="$emit('set-content', type)" class="dropdown-menu" id="materials" v-model="type">
         <option value="decking">{{this.paragraphs.decking}}</option>
         <option value="ducks">{{this.paragraphs.ducks}}</option>
-      </select>
+      </select> -->
 
       <button 
         class="button-language icon-eng" 
@@ -54,6 +57,13 @@ header {
   float: right;
 }
 
+a {
+  position: relative;
+  top: 5px;
+  color: #204440;
+  font-size: 1.1em;
+}
+
 .button-language {
   border: 0;
   height: 30px;
@@ -61,8 +71,6 @@ header {
   margin-left: 20px;
   border-radius: 50px;
   background-size: 100%;
-  position: relative;
-  bottom: 5px;
 
   &.icon-eng {
     background-image: url("../assets/images/flag-eng.png");
@@ -75,11 +83,5 @@ header {
   &:focus {
     outline: 0;
   }
-}
-
-.dropdown-menu {
-  // border: 2px solid red;
-  height: 30px;
-  width: 200px;
 }
 </style>
